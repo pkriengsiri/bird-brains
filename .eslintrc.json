@@ -26,10 +26,10 @@
     "no-unused-vars": "error",
     "no-use-before-define": "error",
     "no-redeclare": "error",
-    "camelcase": "error",
+    "camelcase": ["error", {"properties": "never"}],
     "brace-style": "error",
     "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": "off",
     "quotes": ["error", "double"],
     "semi": ["error", "always"]
   }
