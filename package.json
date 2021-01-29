@@ -4,9 +4,10 @@
   "description": "## Initial App Setup 1. `touch server.js` 2. `npm init -y` 3. `npm install express express-handlebars mysql2 sequelize`",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "lint": "eslint **/*.js --quiet",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
