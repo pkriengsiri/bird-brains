@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
   // Associating User with Sightings
   User.associate = function (models) {
     // When an User is deleted, also delete any associated Sightings
-    Author.hasMany(models.Post, {
+    User.hasMany(models.Sighting, {
       onDelete: "cascade",
     });
   };
