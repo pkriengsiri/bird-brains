@@ -6,12 +6,18 @@ const {
 } = require("@handlebars/allow-prototype-access");
 const app = express();
 const db = require("./models");
+
+// require controllers
 const TrainsController = require("./controllers/trainsController");
 
 const PORT = process.env.PORT || 8080;
 
+// middle ware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Static directory
+app.use(express.static("public"));
 
 app.engine(
   "handlebars",
@@ -32,8 +38,11 @@ app.get("/api/config", (req, res) => {
   });
 });
 
+// use routes on controllers
 app.use(TrainsController);
 
+
+// connect to sql db and have server listen to port
 db.sequelize
   .sync()
   .then(() => {
