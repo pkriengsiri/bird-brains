@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "october23",
+    "password": "beagle",
     "database": "bird_brains",
     "host": "127.0.0.1",
     "dialect": "mysql"
