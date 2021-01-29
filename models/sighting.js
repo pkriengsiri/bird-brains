@@ -1,6 +1,6 @@
 // Creating and exporting the Sightings model
 module.exports = function (sequelize, DataTypes) {
-  const Sightings = sequelize.define("Sightings", {
+  const Sighting = sequelize.define("Sighting", {
     location: DataTypes.STRING,
     comments: DataTypes.TEXT,
     // user_id: DataTypes.INTEGER,
@@ -8,20 +8,20 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   // Associating Sightings with the User and Bird models
-  Sightings.associate = function (models) {
+  Sighting.associate = function (models) {
     // A sighting can't be created without an User due to the foreign key constraint
-    Sightings.belongsTo(models.User, {
+    Sighting.belongsTo(models.User, {
       foreignKey: {
         allowNull: false,
       },
     });
     // A sighting can't be created without an bird due to the foreign key constraint
-    Sightings.belongsTo(models.Bird, {
+    Sighting.belongsTo(models.Bird, {
       foreignKey: {
         allowNull: false,
       },
     });
   };
 
-  return Sightings;
+  return Sighting;
 };
