@@ -38,4 +38,19 @@ router.put("/api/users/:id", (req, res) => {
     });
 });
 
+/**
+ * Route to render high scores page.
+ */
+router.get("/highscores", (req, res) => {
+  db.User.findAll({ order: [["score", "DESC"]] })
+    .then((highscores) => {
+      res.render("highscores", { users: highscores });
+    })
+    .catch((err) => {
+      console.log(err);
+      //TODO: render 404 page if we're unable to return birds
+      res.status(500).end();
+    });
+});
+
 module.exports = router;
