@@ -36,9 +36,13 @@ td {
     
 }
 
-.single-bird:hover {
+.bird-btn:hover {
     background-color: #918f8f;
     color: white;
+}
+
+.bird-btn:focus {
+    background-color: #BDBDBD;
 }
 
 #logo-img {

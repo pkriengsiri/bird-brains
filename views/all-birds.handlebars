@@ -17,6 +17,7 @@
         <tbody class="table-body">
               {{#each birds}}
           <tr>
+              {{!-- <td><a class="waves-effect waves-teal btn-flat" id="bird-btn" data-id="{{this.id}}">{{id}}. {{common_name}}</a></td> --}}
 
             <td><button class="bird-btn" data-id="{{this.id}}"/>{{id}}. {{common_name}}</td>
             <td><img src="{{image_URL}}" id="bird-img"/></td>
