@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  $("select").formSelect();
   console.log("Hello world");
   let imageURL = "";
 
@@ -127,4 +128,5 @@ $(document).ready(() => {
   //   };
 
   //   $("#upload").on("click", processUpload);
+  
 });
