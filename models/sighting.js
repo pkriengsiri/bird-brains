@@ -3,8 +3,7 @@ module.exports = function (sequelize, DataTypes) {
   const Sighting = sequelize.define("Sighting", {
     location: DataTypes.STRING,
     comments: DataTypes.TEXT,
-    // user_id: DataTypes.INTEGER,
-    // bird_id: DataTypes.INTEGER,
+    image_URL: DataTypes.STRING
   });
 
   // Associating Sightings with the User and Bird models

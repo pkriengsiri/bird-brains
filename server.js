@@ -1,4 +1,3 @@
-
 // DEPENDENCIES
 const express = require("express");
 const exphbs = require("express-handlebars");
@@ -7,6 +6,7 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const app = express();
+
 
 // require all models
 const db = require("./models");
@@ -51,7 +51,6 @@ app.use(UserController);
 // app.use(TrainsController);
 app.use(BirdsController);
 app.use(SightingsController);
-
 
 // connect to sql db and have server listen to port
 db.sequelize
