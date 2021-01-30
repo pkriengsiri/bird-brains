@@ -4,7 +4,7 @@ const db = require("../models");
 const router = express.Router();
 
 /**
- * Route to render all trains to a page. 
+ * Route to render all trains to a page.
  */
 router.get("/trains", (req, res) => {
   db.Train.findAll()
