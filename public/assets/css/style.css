@@ -1,8 +1,40 @@
+body {
+    background-color: #F4F1DE;
+}
+
 nav {
     background-color: #A4243B;
 }
 
+tr {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+
+}
+
+.birds-table {
+    margin-top: 50px;
+    border-collapse: separate;
+        border-spacing: 0 10px;
+
+}
+
+.table-head {
+    background-color: #A4243B;
+}
+
+.table-body {
+    background-color: #BDBDBD;
+}
+
 #logo-img {
     height: 100%;
+}
+
+#bird-img {
+    height: 50px;
 }
 
