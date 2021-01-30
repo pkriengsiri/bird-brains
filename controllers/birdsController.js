@@ -9,8 +9,7 @@ const router = express.Router();
 router.get("/birds", (req, res) => {
   db.Bird.findAll()
     .then((allBirds) => {
-      console.log(allBirds);
-      res.render("all-Birds", { birds: allBirds });
+      res.render("all-birds", { birds: allBirds });
     })
     .catch((err) => {
       console.log(err);
@@ -27,7 +26,7 @@ router.get("/birds/:id", (req, res) => {
     where: { id: req.params.id },
   })
     .then((singleBird) => {
-      res.render("single-Bird", singleBird.dataValues);
+      res.render("single-bird", singleBird.dataValues);
     })
     .catch((err) => {
       console.log(err);

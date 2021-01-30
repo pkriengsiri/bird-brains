@@ -15,6 +15,7 @@ const db = require("./models");
 const UserController = require("./controllers/userController");
 // const TrainsController = require("./controllers/trainsController");
 const BirdsController = require("./controllers/birdsController");
+const SightingsController = require("./controllers/sightingsController");
 
 // define the port to be listened to
 const PORT = process.env.PORT || 8080;
@@ -49,6 +50,7 @@ app.get("/api/config", (req, res) => {
 app.use(UserController);
 // app.use(TrainsController);
 app.use(BirdsController);
+app.use(SightingsController);
 
 
 // connect to sql db and have server listen to port
