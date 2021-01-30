@@ -9,6 +9,7 @@ const db = require("./models");
 
 // require controllers
 const TrainsController = require("./controllers/trainsController");
+const BirdsController = require("./controllers/birdsController");
 
 const PORT = process.env.PORT || 8080;
 
@@ -40,6 +41,7 @@ app.get("/api/config", (req, res) => {
 
 // use routes on controllers
 app.use(TrainsController);
+app.use(BirdsController);
 
 
 // connect to sql db and have server listen to port
