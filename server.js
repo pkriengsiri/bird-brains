@@ -7,6 +7,10 @@ const {
 } = require("@handlebars/allow-prototype-access");
 const app = express();
 
+// handlebars helper for increment
+handlebars.registerHelper("inc", function (value) {
+  return parseInt(value) + 1;
+});
 
 // require all models
 const db = require("./models");
@@ -64,10 +68,3 @@ db.sequelize
   .catch((err) => {
     console.log(err);
   });
-
-
-// handlebars helper for increment
-handlebars.registerHelper("inc", function(value, options)
-{
-    return parseInt(value) + 1;
-});
