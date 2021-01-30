@@ -12,9 +12,11 @@ const app = express();
 const db = require("./models");
 
 // require controllers
+const UserController = require("./controllers/userController");
 // const TrainsController = require("./controllers/trainsController");
 const BirdsController = require("./controllers/birdsController");
 
+// define the port to be listened to
 const PORT = process.env.PORT || 8080;
 
 // middle ware
@@ -44,6 +46,7 @@ app.get("/api/config", (req, res) => {
 });
 
 // use routes on controllers
+app.use(UserController);
 // app.use(TrainsController);
 app.use(BirdsController);
 
