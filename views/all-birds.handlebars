@@ -18,7 +18,7 @@
               {{#each birds}}
           <tr>
 
-            <td>{{id}}. {{common_name}}</td>
+            <td><button class="bird-btn" data-id="{{this.id}}"/>{{id}}. {{common_name}}</td>
             <td><img src="{{image_URL}}" id="bird-img"/></td>
             <td>{{points}}</td>
             {{/each}}

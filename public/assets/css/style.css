@@ -30,6 +30,17 @@ td {
     background-color: #BDBDBD;
 }
 
+.bird-btn {
+    background-color: #BDBDBD;
+    border:none;
+    
+}
+
+.single-bird:hover {
+    background-color: #918f8f;
+    color: white;
+}
+
 #logo-img {
     height: 100%;
 }
