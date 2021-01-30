@@ -7,8 +7,9 @@ const router = express.Router();
  * Route to render all birds to a page.
  */
 router.get("/birds", (req, res) => {
-  db.Train.findAll()
+  db.Bird.findAll()
     .then((allBirds) => {
+      console.log(allBirds);
       res.render("all-Birds", { birds: allBirds });
     })
     .catch((err) => {
