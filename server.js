@@ -7,6 +7,8 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 
 // require all models
 const db = require("./models");
