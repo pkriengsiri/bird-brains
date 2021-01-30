@@ -3,7 +3,9 @@ module.exports = function (sequelize, DataTypes) {
   const Bird = sequelize.define("Bird", {
     common_name: DataTypes.STRING,
     image_URL: DataTypes.STRING,
-    points: DataTypes.INTEGER
+    points: DataTypes.INTEGER,
+    createdAt:{type:DataTypes.DATE, defaultValue: sequelize.NOW},
+    updatedAt:{type:DataTypes.DATE, defaultValue: sequelize.NOW}
   });
 
   // Associating Bird with Sightings
