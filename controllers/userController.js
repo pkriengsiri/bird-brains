@@ -5,7 +5,10 @@ const db = require("../models");
 // Creates a new router object
 const router = express.Router();
 
-
+// View route for creating a new user
+router.get("/users/new", (req, res) => {
+  res.render("new-user");
+});
 
 // API POST route to create a user
 router.post("/api/users", (req, res) => {
@@ -27,7 +30,6 @@ router.put("/api/users/:id", (req, res) => {
     },
   })
     .then((user) => {
-      console.log(user);
       res.json(user);
     })
     .catch((err) => {
