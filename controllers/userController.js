@@ -44,7 +44,8 @@ router.put("/api/users/:id", (req, res) => {
 router.get("/highscores", (req, res) => {
   db.User.findAll({ order: [["score", "DESC"]] })
     .then((highscores) => {
-      res.render("highscores", { users: highscores });
+      // res.json({ users: highscores, rank: rank});
+      res.render("highscores", { users: highscores});
     })
     .catch((err) => {
       console.log(err);
