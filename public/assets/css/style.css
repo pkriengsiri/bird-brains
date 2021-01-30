@@ -23,10 +23,39 @@ td {
 }
 .table-head {
     background-color: #A4243B;
+    font-size: large;
 }
 
 .table-body {
     background-color: #BDBDBD;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.bird-btn {
+    background-color: #BDBDBD;
+    border:none;
+}
+
+.bird-btn:hover {
+    background-color: #918f8f;
+    color: white;
+}
+
+.bird-btn:focus {
+    background-color: #BDBDBD;
+    outline:none;
+}
+
+.bird-tag {
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.bird-tag:hover {
+    background-color: #918f8f;
+    color: white;
 }
 
 #logo-img {
