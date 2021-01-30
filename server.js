@@ -1,3 +1,5 @@
+
+// DEPENDENCIES
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
@@ -5,10 +7,13 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const app = express();
+
+// require all models
 const db = require("./models");
 
 // require controllers
-const TrainsController = require("./controllers/trainsController");
+// const TrainsController = require("./controllers/trainsController");
+const BirdsController = require("./controllers/birdsController");
 
 const PORT = process.env.PORT || 8080;
 
@@ -39,11 +44,13 @@ app.get("/api/config", (req, res) => {
 });
 
 // use routes on controllers
-app.use(TrainsController);
+// app.use(TrainsController);
+app.use(BirdsController);
 
 
 // connect to sql db and have server listen to port
 db.sequelize
+  // .sync({ force: true })
   .sync()
   .then(() => {
     app.listen(PORT, () => {
