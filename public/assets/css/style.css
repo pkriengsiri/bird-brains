@@ -21,7 +21,6 @@ td {
         border-spacing: 0 10px;
 
 }
-
 .table-head {
     background-color: #A4243B;
 }
@@ -33,8 +32,19 @@ td {
 #logo-img {
     height: 100%;
 }
-
+/* thumbnail in table  */
 #bird-img {
     height: 50px;
 }
+
+h1 {
+
+    color:#A4243B;
+}
+
+h5 {
+    color:#A4243B;
+    margin-bottom: 2rem;
+}   
+
 
