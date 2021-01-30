@@ -35,3 +35,5 @@ router.put("/api/users/:id", (req, res) => {
       res.status(500).end();
     });
 });
+
+module.exports = router;
