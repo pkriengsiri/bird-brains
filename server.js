@@ -64,3 +64,10 @@ db.sequelize
   .catch((err) => {
     console.log(err);
   });
+
+
+// handlebars helper for increment
+handlebars.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});

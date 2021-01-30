@@ -40,9 +40,10 @@ router.put("/api/users/:id", (req, res) => {
 
 /**
  * Route to render high scores page.
+ * shows top 20
  */
 router.get("/highscores", (req, res) => {
-  db.User.findAll({ order: [["score", "DESC"]] })
+  db.User.findAll({ order: [["score", "DESC"]],limit:20 })
     .then((highscores) => {
       // res.json({ users: highscores, rank: rank});
       res.render("highscores", { users: highscores});

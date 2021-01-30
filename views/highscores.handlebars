@@ -17,7 +17,7 @@
         <tbody class="table-body">
           {{#each users}}
           <tr>
-            <td>{{@index}}</td>
+            <td>{{inc @index}}</td>
             <td><a href="/users/{{id}}" class="">{{user_name}}</td></a>
             {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
             <td>{{score}}</td>
