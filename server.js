@@ -1,3 +1,4 @@
+// Dependencies
 const express = require("express");
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
@@ -10,7 +11,7 @@ const db = require("./models");
 // require controllers
 const UserController = require("./controllers/userController");
 
-
+// define the port to be listened to
 const PORT = process.env.PORT || 8080;
 
 // middle ware
