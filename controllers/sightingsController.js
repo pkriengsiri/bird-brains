@@ -31,10 +31,7 @@ router.get("/sightings/:id", (req, res) => {
     });
 });
 
-// view add form
-router.get("/sightings/new", (req, res) => {
-  res.render("new-sighting");
-});
+
 
 // view edit form
 router.get("/sightings/:id/edit", (req, res) => {
@@ -86,6 +83,11 @@ router.delete("/api/sightings/:id", (req, res) => {
       //TODO: render 404 page if we're unable to return trains
       res.status(500).end();
     });
+});
+
+// view add form
+router.get("/sighting/new", (req, res) => {
+  res.render("new-sighting");
 });
 
 module.exports = router;
