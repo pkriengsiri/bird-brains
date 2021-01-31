@@ -17,22 +17,27 @@
             <th>Points</th>
           </tr>
         </thead>
-
+        {{#if sightings}}
         <tbody class="table-body">
-          {{#each userSightings}}
-          <tr>
-            <td>{{userSightings.createdAt}}</td>
-            <td>{{userSightings.birdId}}</td>
-            <td>{{userSightings.location}}</td>
-            <td>{{points}}</td>
-          </tr>
 
+          {{#each sightings}}
+          {{> sighting-list}}
           {{/each}}
 
 
         </tbody>
+
       </table>
+      {{else}}
+      </table>
+      <p>Welcome to Bird Brains! You have no sightings yet.</p>
+      <p>To get started, add your first sighting.</p>
+      {{/if}}
     </div>
+  </div>
+
+  <div class="row">
+    <button class="btn bird-btn"><a href="/sighting/new">Add a Sighting!</a></button>
   </div>
 
 </div>
