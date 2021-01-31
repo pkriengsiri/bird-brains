@@ -16,15 +16,15 @@
 
         <tbody class="table-body">
           {{#each sightings}}
+          
           <tr>
-            <td><a href="/sightings/{{id}}" class="bird-tag">{{id}}. {{common_name}}</td></a>
+            <td><a href="/sightings/{{id}}" class="bird-tag">{{id}}. {{birds.common_name}}</td></a>
             {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
             <td><img src="{{image_URL}}" id="bird-img" /></td>
             <td>{{location}}</td>
           </tr>
 
           {{/each}}
-
 
         </tbody>
       </table>
