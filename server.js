@@ -40,8 +40,20 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
+
 app.get("/", (req, res) => {
-  res.render("index");
+  db.Sighting.findAll()
+    .then((allSightings) => {
+      res.render("index", { sightings: allSightings });
+    })
+    .catch((err) => {
+      console.log(err);
+      //TODO: render 404 page if we're unable to return trains
+      res.status(500).end();
+    });
 });
 
 app.get("/api/config", (req, res) => {
