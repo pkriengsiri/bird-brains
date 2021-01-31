@@ -69,7 +69,7 @@ router.post("/api/sightings", (req, res) => {
 });
 
 // edit db
-router.post("/api/sightings/:id", (req, res) => {
+router.put("/api/sightings/:id", (req, res) => {
   db.Sighting.update(req.body, { where: { id: req.params.id } })
     .then((result) => {
       res.json(result);

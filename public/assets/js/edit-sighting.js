@@ -29,6 +29,7 @@ $(document).ready(() => {
 
   $("#update").on("click", function (event) {
     event.preventDefault();
+    const id = $("#sighting-id").data("id");
     const UserId = $("#user_select").val();
     const BirdId = $("#bird_select").val();
     const location = $("#location").val();
@@ -43,7 +44,7 @@ $(document).ready(() => {
 
     $.ajax({
       method: "PUT",
-      url: "/api/users/" + UserId,
+      url: `/api/${id}/sighting`"/api/users/" + UserId,
       data: { score: newScore },
     })
       .then((response) => {
