@@ -49,7 +49,10 @@ router.get("/", (req, res) => {
 
 // view single sighting
 router.get("/sightings/:id", (req, res) => {
-  db.Sighting.findOne({ where: { id: req.params.id } })
+  db.Sighting.findOne({
+    where: { id: req.params.id },
+    include: ["User", "Bird"],
+  })
     .then((singleSighting) => {
       res.render("single-sighting", singleSighting.dataValues);
     })

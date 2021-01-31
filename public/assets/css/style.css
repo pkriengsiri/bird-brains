@@ -58,6 +58,10 @@ td {
     color: white;
 }
 
+.single-bird-img {
+    height: 500px;
+}
+
 #logo-img {
     height: 100%;
     margin-left: 1rem;
