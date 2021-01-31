@@ -12,8 +12,10 @@
       </div>
       <div class="input-field row">
         <i class="material-icons prefix">people</i>
-        <select id="user_select">
+        <select id="user_select" placeholder="test">
+          {{#unless query}}
           <option value="" disabled selected>Choose your username</option>
+          {{/unless}}
           {{#each users}}
           <option value={{dataValues.id}} data-score={{dataValues.score}}>{{dataValues.user_name}}</option>
           {{/each}}

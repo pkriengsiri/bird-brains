@@ -15,18 +15,16 @@
             <th>Bird</th>
             <th>Location</th>
             <th>Points</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         {{#if sightings}}
         <tbody class="table-body">
-
           {{#each sightings}}
           {{> sighting-list}}
           {{/each}}
-
-
         </tbody>
-
       </table>
       {{else}}
       </table>
@@ -35,9 +33,10 @@
       {{/if}}
     </div>
   </div>
-
   <div class="row">
-    <button class="btn bird-btn"><a href="/sighting/new">Add a Sighting!</a></button>
+    <button class="btn bird-btn"><a href="/sighting/new?user_id={{user.id}}">Add a Sighting!</a></button>
   </div>
 
 </div>
+
+<script src="/assets/js/user-sightings.js"></script>
