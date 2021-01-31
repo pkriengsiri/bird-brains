@@ -48,7 +48,6 @@ router.get("/sightings/:id/edit", (req, res) => {
           //TODO: render 404 page if we're unable to return trains
           res.status(500).end();
         });
-      res.render("new-sighting", { users: allUsers, birds: allBirds });
     });
   });
 });
