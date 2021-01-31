@@ -6,43 +6,38 @@
 <p class="hide" id="successMessage">Upload was sucessful</p>
 <p class="hide" id="failMessage">Upload failed</p>
 
-<div class="input-field col s12">
-  <select>
-    <option value="" disabled selected>Choose your option</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
-  <label>Materialize Select</label>
-</div>
 
 <div class="container">
   <div class="row">
-    <div class="col s8">
-
-      <form class="col s12">
-        <div class="row">
-
+    <form class="col s6">
+      <div class="input-field row">
+        <select>
+          <option value="" disabled selected>Choose your username</option>
+          {{#each users}}
+          <option value={{dataValues.id}}>{{dataValues.user_name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="input-field row">
+        <select>
+          <option value="" disabled selected>Select a bird</option>
+          {{#each birds}}
+          <option value={{dataValues.id}}>{{dataValues.common_name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="row">
+        <div class="input-field col-12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <label for="icon_prefix2">Comments</label>
         </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">mode_edit</i>
-            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-            <label for="icon_prefix2">Comments</label>
-          </div>
-        </div>
-      </form>
+      </div>
+    </form>
 
-    </div>
   </div>
+</div>
 </div>
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 <script src="../assets/js/new-sighting.js"></script>
-<script type="text/javascript">
-  // Or with jQuery
-
-  $(document).ready(function () {
-    $('select').formSelect();
-  });
-</script>
