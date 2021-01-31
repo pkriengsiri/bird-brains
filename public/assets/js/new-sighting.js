@@ -17,7 +17,7 @@ $(document).ready(() => {
         $("#uploaded-image").empty();
         const image = $("<img>")
           .attr("src", imageURL)
-          .addClass("responsive-img");
+          .addClass("responsive-img z-depth-3");
         $("#uploaded-image").append(image);
         console.log(imageURL);
       } else if (!result.event) {
