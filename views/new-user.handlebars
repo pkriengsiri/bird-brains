@@ -1,1 +1,45 @@
-<p>User signup page will go here</p>
+{{> nav-bar }}
+
+<div class="container">
+    <div class="row">
+        <h2 class="center-align">Become a Bird Brain</h2>
+        <div class="col s2"></div>
+        <form class="col s8">
+            <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">group</i>
+          <textarea id="first_name" class="materialize-textarea"></textarea>
+          <label for="first name">First Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">group</i>
+          <textarea id="last_name" class="materialize-textarea"></textarea>
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">videogame_asset</i>
+          <textarea id="user_name" class="materialize-textarea"></textarea>
+          <label for="user_name">Username (Publicly displayed)</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <textarea id="email" class="materialize-textarea"></textarea>
+          <label for="email">E-mail address</label>
+        </div>
+      </div>
+      <div class="row center-align">
+        <button id="sign-up" class="btn bird-btn">Sign Up!</button>
+      </div>
+        </form>
+        <div class="col s2"></div>
+
+    </div>
+</div>
+
+<script src="/assets/js/new-user.js"></script>
