@@ -60,6 +60,8 @@ td {
 
 #logo-img {
     height: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 /* thumbnail in table  */
 #bird-img {
