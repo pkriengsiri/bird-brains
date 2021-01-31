@@ -40,7 +40,6 @@ $(document).ready(() => {
       BirdId: BirdId,
       UserId: UserId,
     };
-    console.log(data);
     $.post("/api/sightings", data)
       .then((response) => {
         console.log(response);
