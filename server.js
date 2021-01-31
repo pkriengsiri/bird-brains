@@ -60,18 +60,18 @@ app.set("view engine", "handlebars");
 //           console.log(allSightings, allBirds);
 //     });
 
-app.get("/", (req, res) => {
-  db.Sighting.findAll({ order: [["id", "DESC"]], limit: 10 })
-    .then((allSightings) => {
-      // .then((allSightings) => {
-      res.render("index", { sightings: allSightings });
-    })
-    .catch((err) => {
-      console.log(err);
-      //TODO: render 404 page if we're unable to return trains
-      res.status(500).end();
-    });
-});
+// app.get("/", (req, res) => {
+//   db.Sighting.findAll({ order: [["id", "DESC"]], limit: 10 })
+//     .then((allSightings) => {
+//       // .then((allSightings) => {
+//       res.render("index", { sightings: allSightings });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       //TODO: render 404 page if we're unable to return trains
+//       res.status(500).end();
+//     });
+// });
 
 app.get("/api/config", (req, res) => {
   res.json({
