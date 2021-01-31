@@ -54,14 +54,6 @@ $(document).ready(() => {
         console.log(error);
       });
 
-    // $.post("/api/sightings", data)
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
     // Get old user score
     let score = $("#user_select :selected").data("score");
     // Subtract the points from the previous bird
