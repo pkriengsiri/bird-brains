@@ -35,7 +35,10 @@ router.get("/sightings/:id", (req, res) => {
 router.get("/sightings/:id/edit", (req, res) => {
   db.User.findAll({ order: [["user_name", "ASC"]] }).then((allUsers) => {
     db.Bird.findAll({ order: [["common_name", "ASC"]] }).then((allBirds) => {
-      db.Sighting.findOne({ where: { id: req.params.id } })
+      db.Sighting.findOne({
+        where: { id: req.params.id },
+        include: ["User", "Bird"],
+      })
         .then((singleSighting) => {
           res.render("edit-sighting", {
             users: allUsers,
