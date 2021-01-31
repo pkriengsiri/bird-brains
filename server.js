@@ -64,3 +64,7 @@ db.sequelize
   .catch((err) => {
     console.log(err);
   });
+
+/*   app.get(“*”, (req, res) => { ...send 404 html page here});
+
+Because it has the * as the route, anything that the other routes don’t handle will be picked up by this one. */
