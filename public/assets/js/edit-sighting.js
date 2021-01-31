@@ -1,7 +1,7 @@
 $(document).ready(() => {
   $("select").formSelect();
   let imageURL = "";
-  // var instance = M.FormSelect.getInstance(elem);
+  const oldPoints = $("#bird_select :selected").data("points");
 
   var myWidget = cloudinary.createUploadWidget(
     {
@@ -27,45 +27,51 @@ $(document).ready(() => {
     }
   );
 
-  //   $("#submit").on("click", function (event) {
-  //     event.preventDefault();
-  //     const UserId = $("#user_select").val();
-  //     const BirdId = $("#bird_select").val();
-  //     const location = $("#location").val();
-  //     const comments = $("#comments").val();
-  //     const data = {
-  //       location: location,
-  //       comments: comments,
-  //       image_URL: imageURL,
-  //       BirdId: BirdId,
-  //       UserId: UserId,
-  //     };
+  $("#update").on("click", function (event) {
+    event.preventDefault();
+    const UserId = $("#user_select").val();
+    const BirdId = $("#bird_select").val();
+    const location = $("#location").val();
+    const comments = $("#comments").val();
+    const data = {
+      location: location,
+      comments: comments,
+      image_URL: imageURL,
+      BirdId: BirdId,
+      UserId: UserId,
+    };
 
-  //     $.post("/api/sightings", data)
-  //       .then((response) => {
-  //         console.log(response);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
+    // $.post("/api/sightings", data)
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
-  //     const score = $("#user_select :selected").data("score");
-  //     const points = $("#bird_select :selected").data("points");
-  //     const newScore = points + score;
-  //     console.log(newScore);
+    // Get old user score
+    let score = $("#user_select :selected").data("score");
+    // Subtract the points from the previous bird
+    score = score - oldPoints;
+    // Get points for new bird
+    const points = $("#bird_select :selected").data("points");
+    console.log("points: "+points+" oldpoints: "+oldPoints);
+    // Add new bird points to score
+    const newScore = points + score;
+    console.log(newScore);
 
-  //     $.ajax({
-  //       method: "PUT",
-  //       url: "/api/users/" + UserId,
-  //       data: { score: newScore },
-  //     })
-  //       .then((response) => {
-  //         console.log(response);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   });
+    // $.ajax({
+    //   method: "PUT",
+    //   url: "/api/users/" + UserId,
+    //   data: { score: newScore },
+    // })
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  });
 
   document.getElementById("upload_widget").addEventListener(
     "click",
