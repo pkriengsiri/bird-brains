@@ -1,6 +1,7 @@
 $(document).ready(() => {
-  console.log("Hello world");
+  $("select").formSelect();
   let imageURL = "";
+  // var instance = M.FormSelect.getInstance(elem);
 
   var myWidget = cloudinary.createUploadWidget(
     {
@@ -13,6 +14,11 @@ $(document).ready(() => {
         $("#successMessage").removeClass("hide");
         console.log("Done! Here is the image info: ", result.info);
         imageURL = result.info.url;
+        $("#uploaded-image").empty();
+        const image = $("<img>")
+          .attr("src", imageURL)
+          .addClass("responsive-img z-depth-3");
+        $("#uploaded-image").append(image);
         console.log(imageURL);
       } else if (!result.event) {
         $("#failMessage").removeClass("hide");
@@ -21,110 +27,52 @@ $(document).ready(() => {
     }
   );
 
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+    const UserId = $("#user_select").val();
+    const BirdId = $("#bird_select").val();
+    const location = $("#location").val();
+    const comments = $("#comments").val();
+    const data = {
+      location: location,
+      comments: comments,
+      image_URL: imageURL,
+      BirdId: BirdId,
+      UserId: UserId,
+    };
+
+    $.post("/api/sightings", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const score = $("#user_select :selected").data("score");
+    const points = $("#bird_select :selected").data("points");
+    const newScore = points + score;
+    console.log(newScore);
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/" + UserId,
+      data: { score: newScore },
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
   document.getElementById("upload_widget").addEventListener(
     "click",
-    function () {
+    function (event) {
+      event.preventDefault();
       myWidget.open();
     },
     false
   );
-
-  //   const url =
-  //     "https://cors-anywhere.herokuapp.com/https://api.cloudinary.com/v1_1/djou7v3ho/upload";
-
-  //   //   const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
-  //   const form = document.querySelector("form");
-
-  //   form.addEventListener("submit", (e) => {
-  //     e.preventDefault();
-
-  //     const files = document.querySelector("[type=file]").files;
-  //     const formData = new FormData();
-
-  //     for (let i = 0; i < files.length; i++) {
-  //       let file = files[i];
-  //       formData.append("file", file);
-  //       formData.append("upload_preset", "docs_upload_example_us_preset");
-
-  //       fetch(url, {
-  //         method: "POST",
-  //         body: formData,
-  //       })
-  //         .then((response) => {
-  //           return response.text();
-  //         })
-  //         .then((data) => {
-  //           document.getElementById("data").innerHTML += data;
-  //         });
-  //     }
-  //   });
-
-  //   const processUpload = function () {
-  //     const files = $("#image-file")[0].files;
-  //     const formData = new FormData();
-
-  //     for (let i = 0; i < files.length; i++) {
-  //       let file = files[i];
-  //       formData.append("file", file);
-  //       formData.append("upload_preset", "docs_upload_example_us_preset");
-  //       console.log(formData);
-
-  //       fetch(url, {
-  //         method: "POST",
-  //         body: formData,
-  //       })
-  //         .then((response) => {
-  //           console.log(response);
-  //           return response.text();
-  //         })
-  //         .then((data) => {
-  //           console.log(data);
-  //         });
-  //     }
-  //   };
-
-  //   const processUpload = function () {
-  //     const file = $("#image-file")[0].files[0];
-
-  //     const file2 = new FormData($('form')[0]);
-
-  //     $.ajax({
-  //       // Your server script to process the upload
-  //       url: "/api/image",
-  //       type: "POST",
-
-  //       // Form data
-  //       //   data: new FormData($("form")[0]),
-  //       data: file,
-
-  //       // Tell jQuery not to process data or worry about content-type
-  //       // You *must* include these options!
-  //       cache: false,
-  //       contentType: false,
-  //       processData: false,
-
-  //       // Custom XMLHttpRequest
-  //       xhr: function () {
-  //         var myXhr = $.ajaxSettings.xhr();
-  //         if (myXhr.upload) {
-  //           // For handling the progress of the upload
-  //           myXhr.upload.addEventListener(
-  //             "progress",
-  //             function (e) {
-  //               if (e.lengthComputable) {
-  //                 $("progress").attr({
-  //                   value: e.loaded,
-  //                   max: e.total,
-  //                 });
-  //               }
-  //             },
-  //             false
-  //           );
-  //         }
-  //         return myXhr;
-  //       },
-  //     });
-  //   };
-
-  //   $("#upload").on("click", processUpload);
 });

@@ -68,6 +68,18 @@ td {
     height: 50px;
 }
 
+#image-preview {
+    padding: 0px 20px 0px 20px;
+}
+
+#upload_widget {
+    margin-left: 15px;
+}
+
+#uploaded-image {
+    margin-left: 15px;
+}
+
 h1 {
 
     color:#A4243B;
