@@ -44,9 +44,26 @@ app.set("view engine", "handlebars");
 //   res.render("index");
 // });
 
+// app.get("/", (req, res) => {
+//     db.Sighting.findAll({
+//       // where: {},
+//   include: [{
+//       model: db.birds,
+//       where: {}
+//   }]
+//     }).then((allSightings, allBirds) => {
+//       res.render("index", {
+//         sightings: allSightings
+//         birds: allBirds
+//       })
+
+//           console.log(allSightings, allBirds);
+//     });
+
 app.get("/", (req, res) => {
-  db.Sighting.findAll()
+  db.Sighting.findAll({ order: [["id", "DESC"]], limit: 10 })
     .then((allSightings) => {
+      // .then((allSightings) => {
       res.render("index", { sightings: allSightings });
     })
     .catch((err) => {
