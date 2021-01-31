@@ -44,8 +44,8 @@ $(document).ready(() => {
 
     $.ajax({
       method: "PUT",
-      url: `/api/${id}/sighting`"/api/users/" + UserId,
-      data: { score: newScore },
+      url: `/api/sightings/${id}`,
+      data: data,
     })
       .then((response) => {
         console.log(response);
