@@ -60,6 +60,7 @@ router.post("/api/sightings", (req, res) => {
   db.Sighting.create(req.body)
     .then((createdSighting) => {
       res.json(createdSighting);
+      // res.redirect(307,`/users/${parseInt(createdSighting.UserId)}`)
     })
     .catch((err) => {
       console.log(err);
