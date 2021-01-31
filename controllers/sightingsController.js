@@ -31,8 +31,6 @@ router.get("/sightings/:id", (req, res) => {
     });
 });
 
-
-
 // view edit form
 router.get("/sightings/:id/edit", (req, res) => {
   db.Sighting.findOne({ where: { id: req.params.id } })
@@ -87,7 +85,12 @@ router.delete("/api/sightings/:id", (req, res) => {
 
 // view add form
 router.get("/sighting/new", (req, res) => {
-  res.render("new-sighting");
+  db.User.findAll({order: [['user_name', 'ASC']]}).then((allUsers) => {
+    db.Bird.findAll({order: [['common_name', 'ASC']]}).then((allBirds) => {
+      res.render("new-sighting", { users: allUsers, birds: allBirds });
+    });
+  });
+  //res.render("new-sighting");
 });
 
 module.exports = router;

@@ -60,10 +60,24 @@ td {
 
 #logo-img {
     height: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 /* thumbnail in table  */
 #bird-img {
     height: 50px;
+}
+
+#image-preview {
+    padding: 0px 20px 0px 20px;
+}
+
+#upload_widget {
+    margin-left: 15px;
+}
+
+#uploaded-image {
+    margin-left: 15px;
 }
 
 h1 {
