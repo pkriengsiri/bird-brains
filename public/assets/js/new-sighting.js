@@ -40,7 +40,25 @@ $(document).ready(() => {
       BirdId: BirdId,
       UserId: UserId,
     };
+
     $.post("/api/sightings", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    const score = $("#user_select :selected").data("score");
+    const points = $("#bird_select :selected").data("points");
+    const newScore = points + score;
+    console.log(newScore);
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/" + UserId,
+      data: { score: newScore },
+    })
       .then((response) => {
         console.log(response);
       })

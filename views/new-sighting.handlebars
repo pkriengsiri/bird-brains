@@ -2,10 +2,8 @@
 
 <div class="container">
   <div class="row">
-    
-    <div class="col s3"></div>
-    <form class="col s6">
-      <h2 class="center-align">Record a Sighting</h2>
+    <h2 class="center-align">Record a Sighting</h2>
+    <form class="col s8">
       <div class="row">
         <i class="material-icons prefix">add_a_photo</i>
         <button id="upload_widget" class="btn bird-btn">Upload files</button>
@@ -17,7 +15,7 @@
         <select id="user_select">
           <option value="" disabled selected>Choose your username</option>
           {{#each users}}
-          <option value={{dataValues.id}}>{{dataValues.user_name}}</option>
+          <option value={{dataValues.id}} data-score={{dataValues.score}}>{{dataValues.user_name}}</option>
           {{/each}}
         </select>
       </div>
@@ -26,9 +24,10 @@
         <select id="bird_select">
           <option value="" disabled selected>Select a bird</option>
           {{#each birds}}
-          <option value={{dataValues.id}}>{{dataValues.common_name}}</option>
+          <option value={{dataValues.id}} data-points={{dataValues.points}}>{{dataValues.common_name}}</option>
           {{/each}}
         </select>
+
       </div>
       <div class="row">
         <div class="input-field col-12">
@@ -44,15 +43,15 @@
           <label for="comments">Comments</label>
         </div>
       </div>
-      <div class="row center-align">
-        <i class="material-icons prefix">photo_camera</i><p id="uploaded-image">No imaged uploaded</p>
-      </div>
+      
       <div class="row">
         <button class="btn bird-btn" id="submit">Submit your sighting!</button>
       </div>
     </form>
-    <div class="col s3"></div>
-
+    <div class="col s4"><div class="row center-align">
+        <i class="material-icons prefix">photo_camera</i>
+        <p id="uploaded-image">No imaged uploaded</p>
+      </div></div>
   </div>
 </div>
 </div>
