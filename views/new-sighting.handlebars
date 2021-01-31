@@ -1,16 +1,19 @@
 {{> nav-bar }}
 
-
-
-<button id="upload_widget" class="cloudinary-button">Upload files</button>
-<p class="hide" id="successMessage">Upload was sucessful</p>
-<p class="hide" id="failMessage">Upload failed</p>
-
-
 <div class="container">
   <div class="row">
+    
+    <div class="col s3"></div>
     <form class="col s6">
+      <h2 class="center-align">Record a Sighting</h2>
+      <div class="row">
+        <i class="material-icons prefix">add_a_photo</i>
+        <button id="upload_widget" class="btn bird-btn">Upload files</button>
+        <span class="hide" id="successMessage">Upload was sucessful!</span>
+        <span class="hide" id="failMessage">Upload failed!</span>
+      </div>
       <div class="input-field row">
+        <i class="material-icons prefix">people</i>
         <select>
           <option value="" disabled selected>Choose your username</option>
           {{#each users}}
@@ -19,6 +22,7 @@
         </select>
       </div>
       <div class="input-field row">
+        <i class="material-icons prefix"><i class="fas fa-crow fa-sm"></i></i>
         <select>
           <option value="" disabled selected>Select a bird</option>
           {{#each birds}}
@@ -28,12 +32,26 @@
       </div>
       <div class="row">
         <div class="input-field col-12">
-          <i class="material-icons prefix">mode_edit</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">Comments</label>
+          <i class="material-icons prefix">add_location</i>
+          <textarea id="location" class="materialize-textarea"></textarea>
+          <label for="location">Enter a location</label>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col-12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="comments" class="materialize-textarea"></textarea>
+          <label for="comments">Comments</label>
+        </div>
+      </div>
+      <div class="row">
+        <i class="material-icons prefix">mode_edit</i><span id="uploaded-image">No imaged uploaded</span>
+      </div>
+      <div class="row">
+        <button class="btn bird-btn" id="submit">Submit your sighting!</button>
+      </div>
     </form>
+    <div class="col s3"></div>
 
   </div>
 </div>

@@ -66,6 +66,14 @@ td {
     height: 50px;
 }
 
+#upload_widget {
+    margin-left: 15px;
+}
+
+#uploaded-image {
+    margin-left: 15px;
+}
+
 h1 {
 
     color:#A4243B;
