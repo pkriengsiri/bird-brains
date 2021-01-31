@@ -41,6 +41,18 @@ $(document).ready(() => {
       UserId: UserId,
     };
 
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/" + UserId,
+      data: { score: newScore },
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     // $.post("/api/sightings", data)
     //   .then((response) => {
     //     console.log(response);
@@ -60,17 +72,17 @@ $(document).ready(() => {
     const newScore = points + score;
     console.log(newScore);
 
-    // $.ajax({
-    //   method: "PUT",
-    //   url: "/api/users/" + UserId,
-    //   data: { score: newScore },
-    // })
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    $.ajax({
+      method: "PUT",
+      url: "/api/users/" + UserId,
+      data: { score: newScore },
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
 
   document.getElementById("upload_widget").addEventListener(
