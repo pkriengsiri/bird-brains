@@ -1,1 +1,38 @@
-<p>Sightings by user (user landing page) will go here</p>
+{{> nav-bar }}
+
+<div class="container center-align">
+
+  <h1 class="">{{user.user_name}}</h1>
+  <h5>Score: {{user.score}} points</h5>
+
+  <div class="divider"></div>
+  <div class="row">
+    <div class="col s8 offset-s2 center-align">
+      <table class="sightings-table">
+        <thead class="table-head">
+          <tr>
+            <th>Date</th>
+            <th>Bird</th>
+            <th>Location</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+
+        <tbody class="table-body">
+          {{#each userSightings}}
+          <tr>
+            <td>{{userSightings.createdAt}}</td>
+            <td>{{userSightings.birdId}}</td>
+            <td>{{userSightings.location}}</td>
+            <td>{{points}}</td>
+          </tr>
+
+          {{/each}}
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
