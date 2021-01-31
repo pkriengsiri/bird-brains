@@ -130,11 +130,15 @@ router.get("/sighting/new", (req, res) => {
   if (req.query.user_id) {
     query.id = req.query.user_id;
   }
-  db.User.findAll({ where:query,order: [["user_name", "ASC"]] })
+  db.User.findAll({ where: query, order: [["user_name", "ASC"]] })
     .then((allUsers) => {
       db.Bird.findAll({ order: [["common_name", "ASC"]] }).then((allBirds) => {
         // res.json({ users: allUsers, birds: allBirds,query:query })
-        res.render("new-sighting", { users: allUsers, birds: allBirds,query:query });
+        res.render("new-sighting", {
+          users: allUsers,
+          birds: allBirds,
+          query: query,
+        });
       });
     })
     .catch((err) => {

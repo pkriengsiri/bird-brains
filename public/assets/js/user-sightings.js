@@ -7,10 +7,14 @@ $(document).ready(() => {
     // Send the DELETE request.
     $.ajax("/api/sightings/" + id, {
       type: "DELETE",
-    }).then(function () {
-      console.log("deleted sighting", id);
-      // Reload the page to get the updated list
-      location.reload();
-    });
+    })
+      .then(function () {
+        console.log("deleted sighting", id);
+        // Reload the page to get the updated list
+        location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
 });
