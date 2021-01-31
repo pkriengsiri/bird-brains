@@ -18,6 +18,35 @@ router.get("/sightings", (req, res) => {
     });
 });
 
+// view home page recent sightings
+router.get("/", (req, res) => {
+  db.Sighting.findAll({
+    order: [["id", "DESC"]],
+    include: ["User", "Bird"],
+  })
+    .then((allSightings) => {
+      res.render("index", {
+        sightings: allSightings,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).end();
+    });
+});
+
+//   db.Sighting.findAll({order: [['id', 'DESC']]}).then((allSightings) => {
+//     db.Bird.findAll().then((allBirds) => {
+//       db.User.findAll({
+//         where: {id: req.params.id},
+//         include: ["", "Bird"],
+//       }).then((allSightings)) =>
+//       res.render("index", { sightings: allSightings, birds: allBirds });
+//     });
+//   });
+//   //res.render("new-sighting");
+// });
+
 // view single sighting
 router.get("/sightings/:id", (req, res) => {
   db.Sighting.findOne({ where: { id: req.params.id } })
@@ -85,8 +114,8 @@ router.delete("/api/sightings/:id", (req, res) => {
 
 // view add form
 router.get("/sighting/new", (req, res) => {
-  db.User.findAll({order: [['user_name', 'ASC']]}).then((allUsers) => {
-    db.Bird.findAll({order: [['common_name', 'ASC']]}).then((allBirds) => {
+  db.User.findAll({ order: [["user_name", "ASC"]] }).then((allUsers) => {
+    db.Bird.findAll({ order: [["common_name", "ASC"]] }).then((allBirds) => {
       res.render("new-sighting", { users: allUsers, birds: allBirds });
     });
   });
