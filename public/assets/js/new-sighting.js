@@ -1,6 +1,7 @@
 $(document).ready(() => {
   $("select").formSelect();
   let imageURL = "";
+  // var instance = M.FormSelect.getInstance(elem);
 
   var myWidget = cloudinary.createUploadWidget(
     {
@@ -13,7 +14,11 @@ $(document).ready(() => {
         $("#successMessage").removeClass("hide");
         console.log("Done! Here is the image info: ", result.info);
         imageURL = result.info.url;
-        
+        $("#uploaded-image").empty();
+        const image = $("<img>")
+          .attr("src", imageURL)
+          .addClass("responsive-img");
+        $("#uploaded-image").append(image);
         console.log(imageURL);
       } else if (!result.event) {
         $("#failMessage").removeClass("hide");
@@ -21,6 +26,29 @@ $(document).ready(() => {
       }
     }
   );
+
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+    const UserId = $("#user_select").val();
+    const BirdId = $("#bird_select").val();
+    const location = $("#location").val();
+    const comments = $("#comments").val();
+    const data = {
+      location: location,
+      comments: comments,
+      image_URL: imageURL,
+      BirdId: BirdId,
+      UserId: UserId,
+    };
+    console.log(data);
+    $.post("/api/sightings", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   document.getElementById("upload_widget").addEventListener(
     "click",
@@ -30,5 +58,4 @@ $(document).ready(() => {
     },
     false
   );
-
 });

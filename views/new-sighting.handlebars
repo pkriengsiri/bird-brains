@@ -14,7 +14,7 @@
       </div>
       <div class="input-field row">
         <i class="material-icons prefix">people</i>
-        <select>
+        <select id="user_select">
           <option value="" disabled selected>Choose your username</option>
           {{#each users}}
           <option value={{dataValues.id}}>{{dataValues.user_name}}</option>
@@ -23,7 +23,7 @@
       </div>
       <div class="input-field row">
         <i class="material-icons prefix"><i class="fas fa-crow fa-sm"></i></i>
-        <select>
+        <select id="bird_select">
           <option value="" disabled selected>Select a bird</option>
           {{#each birds}}
           <option value={{dataValues.id}}>{{dataValues.common_name}}</option>
@@ -44,8 +44,8 @@
           <label for="comments">Comments</label>
         </div>
       </div>
-      <div class="row">
-        <i class="material-icons prefix">mode_edit</i><span id="uploaded-image">No imaged uploaded</span>
+      <div class="row center-align">
+        <i class="material-icons prefix">photo_camera</i><p id="uploaded-image">No imaged uploaded</p>
       </div>
       <div class="row">
         <button class="btn bird-btn" id="submit">Submit your sighting!</button>
