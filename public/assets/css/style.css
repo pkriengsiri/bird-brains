@@ -147,15 +147,15 @@ td {
     0 5px 5px -3px rgb(0 0 0 / 20%);
 }
 
-#h-color {
+.h-color {
   color:#a4243B;
 }
 
-#h-color:focus {
+.h-color:focus {
   outline:none;
 }
 
-#h-color:hover {
+.h-color:hover {
   background-color: #a4243B;
   color: white;
 }
@@ -200,10 +200,10 @@ h5 {
   margin-bottom: 2rem;
 }
 
-a{
+/* a{
   color:black
 }
 a:hover {
   background-color: #a4243B;
   color: white;
-}
+} */
