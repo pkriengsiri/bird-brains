@@ -65,6 +65,9 @@ db.sequelize
     console.log(err);
   });
 
-/*   app.get(“*”, (req, res) => { ...send 404 html page here});
+/*  404 Page route...  Because it has the * as the route, anything that the other routes don’t handle will be picked up by this one. */
 
-Because it has the * as the route, anything that the other routes don’t handle will be picked up by this one. */
+app.get(“*”, (req, res) => {
+  res.render("404-page");
+  });
+
