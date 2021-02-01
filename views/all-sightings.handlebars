@@ -3,8 +3,9 @@
 <div class="container">
   <div class="divider"></div>
   <div class="row">
-    <div class="col s8 offset-s2 center-align">
-      <table class="birds-table">
+    <div class="col s2"></div>
+    <div class="col s8" id="table-col">
+      <table class="striped birds-table">
         <thead class="table-head">
           <tr>
             <th>Bird Name</th>
@@ -20,7 +21,7 @@
 
 
           <tr>
-            <td><a href="/sightings/{{id}}" class="bird-tag">{{BirdId}}. {{Bird.common_name}}</td></a>
+            <td><a href="/sightings/{{id}}" class="bird-tag">{{Bird.common_name}}</td></a>
 
             <td><img src="{{image_URL}}" id="bird-img" /></td> 
             <td>{{location}}</td>
@@ -33,4 +34,5 @@
       </table>
     </div>
   </div>
+  <div class="col s2"></div>
 </div>
