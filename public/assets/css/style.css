@@ -7,16 +7,18 @@ nav {
   background-color: #a4243b;
 }
 
+/* tables formatting  */
+.table-head {
+  background-color: #a4243b;
+  font-size: large;
+}
+
 tr {
   padding: 10px;
 }
 
 td {
   padding: 10px;
-}
-
-.action-buttons {
-  margin-top: 20px;
 }
 
 .birds-table {
@@ -37,19 +39,29 @@ td {
   font-weight: bold;
 }
 
-.bird-btn {
-  background-color: #a4243b;
-  border: none;
+.bird-tag {
+  color: black;
+  font-weight: bold;
+  font-size: medium;
 }
 
-.bird-btn:hover {
-  background-color: #df3150;
+.bird-tag:hover {
+  background-color: #918f8f;
   color: white;
 }
 
-.bird-btn:focus {
-  background-color: #df3150;
-  outline: none;
+/* thumbnail in table  */
+#bird-img {
+  height: 50px;
+  padding: 0px 20px 0px 20px;
+}
+
+/* edit and delete buttons in table  */
+.fa-edit{
+  color: black;
+}
+.fa-trash-alt{
+  color: black;
 }
 
 .bird-btn-secondary {
@@ -69,15 +81,27 @@ td {
 
 .bird-tag {
   color: black;
-  font-weight: bold;
-  font-size: medium;
 }
 
-.bird-tag:hover {
-  background-color: #918f8f;
+
+
+/* buttons formatting  */
+.btn {
+  background-color: #a4243b;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #df3150;
   color: white;
 }
 
+.btn:focus {
+  background-color: #df3150;
+  outline: none;
+}
+
+/* homepage carousel cards formatting */
 .card-img {
   max-height: 300px;
   width: auto;
@@ -96,9 +120,15 @@ td {
   max-width: 300px;
 }
 
+/* home page action buttons  */
+.action-buttons {
+  margin-top: 20px;
+}
+
+/* pagination formatting  */
 .paginate-top {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .sighting-form {
@@ -107,7 +137,8 @@ td {
 }
 
 .z-depth-3 {
-  box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+  box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%),
+    0 5px 5px -3px rgb(0 0 0 / 20%);
 }
 
 #single-bird-img {
@@ -138,6 +169,8 @@ td {
   margin-left: 15px;
 }
 
+
+/* page text formatting  */
 
 h1 {
   color: #a4243b;
