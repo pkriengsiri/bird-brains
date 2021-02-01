@@ -44,9 +44,6 @@ $(document).ready(() => {
     }
 
     //render the >
-    if(page = pages) {
-        
-    }
 
   }
 
