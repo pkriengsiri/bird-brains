@@ -14,12 +14,11 @@ router.get("/birds", (req, res) => {
     pagination.limit = limit;
     pagination.offset = offset;
   }
-  db.Bird.findAll().then((res) => {
-    const results = res.length;
+  db.Bird.findAll().then((response) => {
+    const numberOfResults = { number: response.length };
     db.Bird.findAll(pagination)
       .then((allBirds) => {
-        console.log(allBirds);
-        res.render("all-birds", { birds: allBirds, results: results });
+        res.render("all-birds", { birds: allBirds, results: numberOfResults });
       })
       .catch((err) => {
         console.log(err);
