@@ -15,19 +15,39 @@
         </thead>
 
         <tbody class="table-body">
-          {{#each birds}}
+
+
+
+          {{!-- {{#each birds}}
           <tr>
             <td><a href="/birds/{{id}}" class="bird-tag">{{id}}. {{common_name}}</td></a>
             {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
-            <td><img src="{{image_URL}}" id="bird-img" /></td>
+            {{!-- <td><img src="{{image_URL}}" id="bird-img" /></td>
             <td>{{points}}</td>
           </tr>
 
-          {{/each}}
+          {{/each}} --}}
 
 
         </tbody>
       </table>
     </div>
   </div>
+  <div class="row center-align">
+    <ul class="pagination">
+      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+      <li class="active"><a href="#!">1</a></li>
+      <li class="waves-effect"><a href="#!">2</a></li>
+      <li class="waves-effect"><a href="#!">3</a></li>
+      <li class="waves-effect"><a href="#!">4</a></li>
+      <li class="waves-effect"><a href="#!">5</a></li>
+      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+  </div>
 </div>
+
+
+
+<input type="text" class="hide query-data" data-elements={{ birds.length }}>
+
+<script src="/assets/js/all-birds.js"></script>
