@@ -48,20 +48,21 @@
                     <label for="comments">Comments</label>
                 </div>
             </div>
+            <div class="warning-fields hide center-align">
+                <p>You must fill out all form fields before submitting!</p>
+            </div>
             <div class="row">
                 <button class="btn bird-btn" id="update">Update your sighting!</button>
             </div>
         </form>
         <div class="col s12 m4 l4 image-preview">
             <div class="row center-align">
-                    <i class="material-icons prefix">photo_camera</i>
-                    {{#if sighting.dataValues.image_URL}}
-                    <p><img src="{{sighting.dataValues.image_URL}}"
-                            class="responsive-img z-depth-3" /></p>
-                    {{else}}
-                    <p><img src="/assets/imgs/no-image.jpg"
-                            class="responsive-img z-depth-3" /></p>
-                    {{/if}}
+                <i class="material-icons prefix">photo_camera</i>
+                {{#if sighting.dataValues.image_URL}}
+                <p><img src="{{sighting.dataValues.image_URL}}" class="responsive-img z-depth-3" /></p>
+                {{else}}
+                <p><img src="/assets/imgs/no-image.jpg" class="responsive-img z-depth-3" /></p>
+                {{/if}}
             </div>
         </div>
     </div>
