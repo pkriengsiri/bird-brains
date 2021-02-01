@@ -5,18 +5,6 @@ const db = require("../models");
 // Creates a new router object
 const router = express.Router();
 
-// view all sightings
-router.get("/sightings", (req, res) => {
-  db.Sighting.findAll()
-    .then((allSightings) => {
-      res.render("all-sightings", { sightings: allSightings });
-    })
-    .catch((err) => {
-      console.log(err);
-      //TODO: render 404 page if we're unable to return trains
-      res.status(500).end();
-    });
-});
 
 // view home page recent sightings
 router.get("/", (req, res) => {
@@ -39,11 +27,11 @@ router.get("/", (req, res) => {
 
 router.get("/sightings", (req, res) => {
   db.Sighting.findAll({
-    order: [["createdAt", "ASC"]],
-    include: ["User", "Bird"],
+    order: [["createdAt", "DESC"]],
+    include: ["Bird"],
   })
     .then((allSightings) => {
-      res.render("sightings", {
+      res.render("all-sightings", {
         sightings: allSightings,
       });
     })

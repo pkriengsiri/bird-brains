@@ -18,14 +18,14 @@
         <tbody class="table-body">
           {{#each sightings}}
 
-          
+
           <tr>
-            <td><a href="/sightings/{{id}}" class="bird-tag">{{id}}. {{Bird.common_name}}</td></a>
-            {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
-            <td><img src="{{image_URL}}" id="bird-img" /></td>
+            <td><a href="/sightings/{{id}}" class="bird-tag">{{BirdId}}. {{Bird.common_name}}</td></a>
+
+            <td><img src="{{image_URL}}" id="bird-img" /></td> 
             <td>{{location}}</td>
             <td>{{createdAt}}</td>
-          </tr>
+          </tr> 
 
           {{/each}}
 
