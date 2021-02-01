@@ -78,6 +78,11 @@ td {
   max-width: 300px;
 }
 
+.paginate-top {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 .single-bird-img {
   height: 500px;
 }

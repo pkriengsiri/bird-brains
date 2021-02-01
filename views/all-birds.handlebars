@@ -2,15 +2,19 @@
 
 <div class="container">
   <div class="divider"></div>
+  <div class="row center-align"><h2>All Birds</h2></div>
   <div class="row">
-    <div class="col s8 offset-s2 center-align">
-      <table class="birds-table">
+    <table class="birds-table striped">
+      <div class="col s8 offset-s2 center-align">
+        <div class="row center-align paginate-top">
+          <ul class="pagination hide">
+          </ul>
+        </div>
         <thead class="table-head">
           <tr>
             <th>Bird Name</th>
             <th>Image</th>
             <th>Points</th>
-            {{!-- <th>Item Price</th> --}}
           </tr>
         </thead>
 
@@ -18,16 +22,22 @@
           {{#each birds}}
           <tr>
             <td><a href="/birds/{{id}}" class="bird-tag">{{id}}. {{common_name}}</td></a>
-            {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
             <td><img src="{{image_URL}}" id="bird-img" /></td>
             <td>{{points}}</td>
           </tr>
-
           {{/each}}
-
-
         </tbody>
-      </table>
-    </div>
+    </table>
   </div>
 </div>
+<div class="row center-align">
+  <ul class="pagination hide">
+  </ul>
+</div>
+</div>
+
+
+
+<input type="text" class="hide query-data" data-elements={{ results.number }}>
+
+<script src="/assets/js/all-birds.js"></script>
