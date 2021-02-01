@@ -2,5 +2,7 @@
   <td>{{createdAt}}</td>
   <td>{{Bird.common_name}}</td>
   <td>{{location}}</td>
-  <td>{{points}}</td>
-</tr>
+  <td class="center-align">{{Bird.points}}</td>
+  <td class="center-align"><a href="/sightings/{{id}}/edit"><i class="fas fa-edit"></i></a></td>
+  <td class="center-align delete-sighting" data-id="{{id}}"><a href=""><i class="fas fa-trash-alt"></i></a></td>
+  </tr>

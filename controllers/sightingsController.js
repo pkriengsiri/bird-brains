@@ -49,7 +49,10 @@ router.get("/", (req, res) => {
 
 // view single sighting
 router.get("/sightings/:id", (req, res) => {
-  db.Sighting.findOne({ where: { id: req.params.id } })
+  db.Sighting.findOne({
+    where: { id: req.params.id },
+    include: ["User", "Bird"],
+  })
     .then((singleSighting) => {
       res.render("single-sighting", singleSighting.dataValues);
     })
@@ -89,6 +92,7 @@ router.post("/api/sightings", (req, res) => {
   db.Sighting.create(req.body)
     .then((createdSighting) => {
       res.json(createdSighting);
+      // res.redirect(307,`/users/${parseInt(createdSighting.UserId)}`)
     })
     .catch((err) => {
       console.log(err);
@@ -125,10 +129,19 @@ router.delete("/api/sightings/:id", (req, res) => {
 
 // view add form
 router.get("/sighting/new", (req, res) => {
-  db.User.findAll({ order: [["user_name", "ASC"]] })
+  let query = {};
+  if (req.query.user_id) {
+    query.id = req.query.user_id;
+  }
+  db.User.findAll({ where: query, order: [["user_name", "ASC"]] })
     .then((allUsers) => {
       db.Bird.findAll({ order: [["common_name", "ASC"]] }).then((allBirds) => {
-        res.render("new-sighting", { users: allUsers, birds: allBirds });
+        // res.json({ users: allUsers, birds: allBirds,query:query })
+        res.render("new-sighting", {
+          users: allUsers,
+          birds: allBirds,
+          query: query,
+        });
       });
     })
     .catch((err) => {

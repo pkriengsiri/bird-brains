@@ -1,117 +1,115 @@
 body {
-    background-color: #F4F1DE;
+  background-color: #f4f1de;
 }
 
-
-
 nav {
-    background-color: #A4243B;
+  background-color: #a4243b;
 }
 
 tr {
-    padding: 10px;
+  padding: 10px;
 }
 
 td {
-    padding: 10px;
-
+  padding: 10px;
 }
 
 .action-buttons {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .birds-table {
-    margin-top: 50px;
-    border-collapse: separate;
-        border-spacing: 0 10px;
-
+  margin-top: 50px;
+  border-collapse: separate;
+  border-spacing: 0 10px;
 }
 .table-head {
-    background-color: #A4243B;
-    font-size: large;
+  background-color: #a4243b;
+  font-size: large;
 }
 
 .table-body {
-    background-color: #BDBDBD;
-    font-size: medium;
-    font-weight: bold;
+  background-color: #bdbdbd;
+  font-size: medium;
+  font-weight: bold;
 }
 
 .bird-btn {
-    background-color: #A4243B;
-    border:none;
+  background-color: #a4243b;
+  border: none;
 }
 
 .bird-btn:hover {
-    background-color: #df3150;
-    color: white;
+  background-color: #df3150;
+  color: white;
 }
 
 .bird-btn:focus {
-    background-color: #df3150;
-    outline:none;
+  background-color: #df3150;
+  outline: none;
 }
 
 .bird-tag {
-    color: black;
-    font-weight: bold;
-    font-size: medium;
+  color: black;
+  font-weight: bold;
+  font-size: medium;
 }
 
 .bird-tag:hover {
-    background-color: #918f8f;
-    color: white;
+  background-color: #918f8f;
+  color: white;
 }
 
 .card-img {
-    max-height: 300px;
-    width: auto;
+  max-height: 300px;
+  width: auto;
 }
 
 .card-custom {
-    max-width: 300px;
-    width: auto;
-    height: auto;
-    margin: 0px 10px 0px 10px;
-    background: rgb(238, 238, 238);
-    box-shadow: 10px 10px 8px #888888;
+  max-width: 300px;
+  width: auto;
+  height: auto;
+  margin: 0px 10px 0px 10px;
+  background: rgb(238, 238, 238);
+  box-shadow: 10px 10px 8px #888888;
 }
 
 .card-content {
-    max-width: 300px;
+  max-width: 300px;
+}
+
+.single-bird-img {
+  height: 500px;
 }
 
 #logo-img {
-    height: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  height: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+
 /* thumbnail in table  */
 #bird-img {
-    height: 50px;
+  height: 50px;
 }
 
 #image-preview {
-    padding: 0px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
 }
 
 #upload_widget {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 #uploaded-image {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 h1 {
-
-    color:#A4243B;
+  color: #a4243b;
 }
 
 h5 {
-    color:#A4243B;
-    margin-bottom: 2rem;
-}   
-
-
+  color: #a4243b;
+  margin-bottom: 2rem;
+}
