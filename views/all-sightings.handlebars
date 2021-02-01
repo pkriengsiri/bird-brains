@@ -1,1 +1,36 @@
-<p>All sightings view will go here</p>
+{{> nav-bar }}
+
+<div class="container">
+  <div class="divider"></div>
+  <div class="row">
+    <div class="col s8 offset-s2 center-align">
+      <table class="birds-table">
+        <thead class="table-head">
+          <tr>
+            <th>Bird Name</th>
+            <th>Image</th>
+            <th>Location</th>
+            <th>Date Sighted</th>
+            {{!-- <th>Item Price</th> --}}
+          </tr>
+        </thead>
+
+        <tbody class="table-body">
+          {{#each sightings}}
+
+          
+          <tr>
+            <td><a href="/sightings/{{id}}" class="bird-tag">{{Bird.common_name}}</td></a>
+            {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
+            <td><img src="{{image_URL}}" id="bird-img" /></td>
+            <td>{{location}}</td>
+            <td>{{createdAt}}</td>
+          </tr>
+
+          {{/each}}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
