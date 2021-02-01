@@ -11,8 +11,8 @@ router.get("/birds", (req, res) => {
   const limit = parseInt(req.query.results);
   const offset = (parseInt(req.query.page) - 1) * limit;
   if (req.query.page) {
-    pagination.limit = limit;
-    pagination.offset = offset;
+    pagination.limit = limit || 10;
+    pagination.offset = offset || 1;
   }
   db.Bird.findAll().then((response) => {
     const numberOfResults = { number: response.length };

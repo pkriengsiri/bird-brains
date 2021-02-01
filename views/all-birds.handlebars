@@ -10,25 +10,17 @@
             <th>Bird Name</th>
             <th>Image</th>
             <th>Points</th>
-            {{!-- <th>Item Price</th> --}}
           </tr>
         </thead>
 
         <tbody class="table-body">
-
-
-
-          {{!-- {{#each birds}}
+          {{#each birds}}
           <tr>
             <td><a href="/birds/{{id}}" class="bird-tag">{{id}}. {{common_name}}</td></a>
-            {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
-            {{!-- <td><img src="{{image_URL}}" id="bird-img" /></td>
+            <td><img src="{{image_URL}}" id="bird-img" /></td>
             <td>{{points}}</td>
           </tr>
-
-          {{/each}} --}}
-
-
+          {{/each}}
         </tbody>
       </table>
     </div>
