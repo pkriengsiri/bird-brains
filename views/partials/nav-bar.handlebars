@@ -1,11 +1,37 @@
 <nav>
     <div class="nav-wrapper">
-        <img src="/assets/imgs/bird_brains_logo.png" alt="bird logo" id="logo-img">
-        <a href="#" class="brand-logo">Bird Brains</a>
+
+        <a href="/"><img src="/assets/imgs/bird_brains_logo.png" alt="bird logo" id="logo-img"></a>
+        <a href="/" class="brand-logo">Bird Brains</a>
+
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/highscores">HiScores</a></li>
             <li><a href="/birds">Birds</a></li>
             {{!-- <li><a href="/user">Users</a></li> --}}
+
         </ul>
+        {{!-- left slide in nav items --}}
+        <a href="#" data-target="left-slide-nav" class="sidenav-trigger right"><i
+                class="material-icons">menu</i></a>
+
+        {{!-- dropdown nav items --}}
+        {{!-- <a href="#" data-target="dropdown-nav" class="dropdown-trigger right"><i
+                class="material-icons">menu</i></a> --}}
     </div>
 </nav>
+
+
+
+{{!-- side slide in nav --}}
+<ul class="sidenav" id="left-slide-nav">
+    <li><a href="/highscores">HiScores</a></li>
+    <li><a href="/birds">Birds</a></li>
+    {{!-- <li><a href="/user">Users</a></li> --}}
+</ul>
+
+{{!-- dropdown nav --}}
+<ul id="dropdown-nav" class="dropdown-content">
+    <li><a href="/highscores">HiScores</a></li>
+    <li><a href="/birds">Birds</a></li>
+    {{!-- <li><a href="/user">Users</a></li> --}}
+</ul>
