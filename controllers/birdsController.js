@@ -7,15 +7,26 @@ const router = express.Router();
  * Route to render all birds to a page.
  */
 router.get("/birds", (req, res) => {
-  db.Bird.findAll()
-    .then((allBirds) => {
-      res.render("all-birds", { birds: allBirds });
-    })
-    .catch((err) => {
-      console.log(err);
-      //TODO: render 404 page if we're unable to return birds
-      res.status(500).end();
-    });
+  const pagination = {};
+  const limit = parseInt(req.query.results);
+  const offset = (parseInt(req.query.page) - 1) * limit;
+  if (req.query.page) {
+    pagination.limit = limit;
+    pagination.offset = offset;
+  }
+  db.Bird.findAll().then((res) => {
+    const results = res.length;
+    db.Bird.findAll(pagination)
+      .then((allBirds) => {
+        console.log(allBirds);
+        res.render("all-birds", { birds: allBirds, results: results });
+      })
+      .catch((err) => {
+        console.log(err);
+        //TODO: render 404 page if we're unable to return birds
+        res.status(500).end();
+      });
+  });
 });
 
 /**
