@@ -61,7 +61,7 @@ $(document).ready(() => {
     })
       .then((response) => {
         console.log(response);
-        window.location.replace(`/users/${data.UserId}`)
+        window.location.replace(`/users/${data.UserId}`);
       })
       .catch((error) => {
         console.log(error);
