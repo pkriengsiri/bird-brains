@@ -56,6 +56,12 @@ td {
   padding: 0px 20px 0px 20px;
 }
 
+.bird-img {
+  height: 50px;
+  padding: 0px 20px 0px 20px;
+}
+
+
 /* edit and delete buttons in table  */
 .fa-edit{
   color: black;
