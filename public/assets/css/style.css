@@ -58,6 +58,11 @@ td {
     color: white;
 }
 
+.paginate-top {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 .single-bird-img {
     height: 500px;
 }
