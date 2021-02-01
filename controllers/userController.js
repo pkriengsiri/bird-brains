@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 const db = require("../models");
+const moment = require("moment");
 
 // Creates a new router object
 const router = express.Router();
@@ -64,10 +65,17 @@ router.get("/users/:id", (req, res) => {
         order: [["createdAt", "DESC"]],
         include: [db.Bird],
       }).then((userSightings) => {
+        const formattedSightings = userSightings.map((sighting) => {
+          const formattedSighting = { ...sighting.dataValues };
+          formattedSighting.createdAt = moment(sighting.createdAt)
+            ? moment(sighting.createdAt).format("MMM D YYYY")
+            : "N/A";
+          return formattedSighting;
+        });
         // res.json({
         res.render("user-sightings", {
           user: singleUser.dataValues,
-          sightings: userSightings,
+          sightings: formattedSightings,
         });
       });
     })
