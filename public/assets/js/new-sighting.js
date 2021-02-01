@@ -1,6 +1,6 @@
 $(document).ready(() => {
   $("select").formSelect();
-  let imageURL = "";
+  let imageURL = "" || "/assets/imgs/no-image.jpg";
   // var instance = M.FormSelect.getInstance(elem);
 
   var myWidget = cloudinary.createUploadWidget(
