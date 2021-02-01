@@ -22,6 +22,7 @@ $(document).ready(() => {
     $.post("/api/users", data)
       .then((response) => {
         console.log(response);
+        window.location.replace(`/users/${response.id}`);
       })
       .catch((error) => {
         console.log(error);
