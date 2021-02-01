@@ -35,17 +35,23 @@ router.get("/", (req, res) => {
     });
 });
 
-//   db.Sighting.findAll({order: [['id', 'DESC']]}).then((allSightings) => {
-//     db.Bird.findAll().then((allBirds) => {
-//       db.User.findAll({
-//         where: {id: req.params.id},
-//         include: ["", "Bird"],
-//       }).then((allSightings)) =>
-//       res.render("index", { sightings: allSightings, birds: allBirds });
-//     });
-//   });
-//   //res.render("new-sighting");
-// });
+// view all sightings in order of most recent
+
+router.get("/sightings", (req, res) => {
+  db.Sighting.findAll({
+    order: [["createdAt", "ASC"]],
+    include: ["User", "Bird"],
+  })
+    .then((allSightings) => {
+      res.render("sightings", {
+        sightings: allSightings,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).end();
+    });
+});
 
 // view single sighting
 router.get("/sightings/:id", (req, res) => {
