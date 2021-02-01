@@ -84,7 +84,8 @@ td {
 }
 
 .sighting-form {
-  padding: 0px 30px 0px 30px;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
 }
 
 .single-bird-img {
@@ -102,8 +103,10 @@ td {
   height: 50px;
 }
 
-#image-preview {
-  padding: 0px 20px 0px 20px;
+.image-preview {
+  padding: 20px;
+  background-color: #fbf9e7;
+  box-shadow: 5px 5px 3px #888888;
 }
 
 #upload_widget {

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <h2 class="center-align">Edit a Sighting</h2>
-        <form class="col s12 m8 l8">
+        <form class="col s12 m8 l8 sighting-form">
             {{!-- Hidden input to store sighting ID --}}
             <div class="row hide">
                 <input type="text" data-id="{{sighting.dataValues.id}}" id="sighting-id">
@@ -52,7 +52,7 @@
                 <button class="btn bird-btn" id="update">Update your sighting!</button>
             </div>
         </form>
-        <div class="col s12 m4 l4" id="image-preview">
+        <div class="col s12 m4 l4 image-preview">
             <div class="row center-align">
                 <i class="material-icons prefix">photo_camera</i>
                 {{#if sighting.dataValues.image_URL}}
