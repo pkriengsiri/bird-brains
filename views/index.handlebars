@@ -1,34 +1,46 @@
 {{> nav-bar }}
 
 <div class="container">
-  <div class="divider"></div>
-  <div class="row">
-    <div class="col s8 offset-s2 center-align">
-      <table class="birds-table">
-        <thead class="table-head">
-          <tr>
-            <th>Bird Name</th>
-            <th>Image</th>
-            <th>Location</th>
-            {{!-- <th>Item Price</th> --}}
-          </tr>
-        </thead>
-
-        <tbody class="table-body">
-          {{#each sightings}}
-
-          
-          <tr>
-            <td><a href="/sightings/{{id}}" class="bird-tag">{{id}}. {{Bird.common_name}}</td></a>
-            {{!-- <td><button class="bird-btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
-            <td><img src="{{image_URL}}" id="bird-img" /></td>
-            <td>{{location}}</td>
-          </tr>
-
-          {{/each}}
-
-        </tbody>
-      </table>
-    </div>
+  <div class="row center-align">
+    <h2>Welcome to Bird Brains!</h2>
+    {{!-- <i class="fas fa-kiwi-bird fa-3x"></i> --}}
   </div>
-</div>
+  <div class="row">
+    <h5><span><i class="fas fa-binoculars fa-lg"></i></span> Last 10 Sightings</h5>
+    <div class="col s12 center-align sightings-carousel">
+      {{#each sightings}}
+      <div class="row">
+        <div class="col s12">
+          <div class="card-custom">
+            <div class="card-image">
+              <img src="{{image_URL}}" class="card-img responsive-img">
+              <span class="card-title">{{Bird.common_name}}</span>
+            </div>
+            <div class="card-content center-align">
+              <p>Spotted by: {{User.user_name}}</p>
+              <p>{{location}}</p>
+            </div>
+            <div class="card-action">
+              <a href="/sightings/{{id}}">View the sighting!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="row center-align">
+      <div class="col s12 l4 action-buttons">
+        <a href="/sightings"><button class="btn-large bird-btn"><i class="fas fa-kiwi-bird"></i>   View all sightings</button></a>
+      </div>
+      <div class="col s12 l4 action-buttons">
+        <a href="/sighting/new"><button class="btn-large bird-btn action buttons"><i class="fas fa-camera"></i>    Add a sighting</button></a>
+      </div>
+      <div class="col s12 l4 action-buttons">
+        <a href="/users/new"><button class="btn-large bird-btn action buttons"><i class="fas fa-users"></i>    Create an account</button></a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/assets/js/slick.min.js"></script>
+  <script src="/assets/js/index.js"></script>
