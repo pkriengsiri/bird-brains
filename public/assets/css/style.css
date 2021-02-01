@@ -104,8 +104,8 @@ td {
 }
 
 .image-preview {
-  padding: 20px;
-  background-color: #fbf9e7;
+  padding: 20px 30px 0px 30px !important;
+  background-color: #f8f6e5;
   box-shadow: 5px 5px 3px #888888;
 }
 
@@ -113,9 +113,6 @@ td {
   margin-left: 15px;
 }
 
-#uploaded-image {
-  margin-left: 15px;
-}
 
 h1 {
   color: #a4243b;

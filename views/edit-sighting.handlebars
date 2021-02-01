@@ -17,7 +17,8 @@
             <div class="input-field row">
                 <i class="material-icons prefix">people</i>
                 <select id="user_select">
-                    <option value={{sighting.dataValues.User.id}} data-score={{sighting.dataValues.User.score}}>{{sighting.dataValues.User.user_name}}</option>
+                    <option value={{sighting.dataValues.User.id}} data-score={{sighting.dataValues.User.score}}>
+                        {{sighting.dataValues.User.user_name}}</option>
                     {{#each users}}
                     <option value={{dataValues.id}} data-score={{dataValues.score}}>{{dataValues.user_name}}</option>
                     {{/each}}
@@ -26,7 +27,8 @@
             <div class="input-field row">
                 <i class="material-icons prefix"><i class="fas fa-crow fa-sm"></i></i>
                 <select id="bird_select">
-                    <option value={{sighting.dataValues.Bird.id}} data-points={{sighting.dataValues.Bird.points}}>{{sighting.dataValues.Bird.common_name}}</option>
+                    <option value={{sighting.dataValues.Bird.id}} data-points={{sighting.dataValues.Bird.points}}>
+                        {{sighting.dataValues.Bird.common_name}}</option>
                     {{#each birds}}
                     <option value={{dataValues.id}} data-points={{dataValues.points}}>{{dataValues.common_name}}
                     </option>
@@ -54,12 +56,14 @@
         </form>
         <div class="col s12 m4 l4 image-preview">
             <div class="row center-align">
-                <i class="material-icons prefix">photo_camera</i>
-                {{#if sighting.dataValues.image_URL}}
-                <p id="uploaded-image"><img src="{{sighting.dataValues.image_URL}}" class="responsive-img z-depth-3"/></p>
-                {{else}}
-                <p id="uploaded-image">No imaged uploaded</p>
-                {{/if}}
+                    <i class="material-icons prefix">photo_camera</i>
+                    {{#if sighting.dataValues.image_URL}}
+                    <p><img src="{{sighting.dataValues.image_URL}}"
+                            class="responsive-img z-depth-3" /></p>
+                    {{else}}
+                    <p><img src="/assets/imgs/no-image.jpg"
+                            class="responsive-img z-depth-3" /></p>
+                    {{/if}}
             </div>
         </div>
     </div>
