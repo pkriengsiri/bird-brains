@@ -44,7 +44,20 @@ $(document).ready(() => {
     }
 
     //render the >
-
+    if (page === pages) {
+      const chevronRight = $("<li>")
+        .addClass("disabled")
+        .html(`<a href="#!"><i class="material-icons">chevron_right</i></a>`);
+      $(".pagination").append(chevronRight);
+    } else {
+      const nextPage = page + 1;
+      const chevronRight = $("<li>")
+        .addClass("waves-effect")
+        .html(
+          `<a href="?page=${nextPage}&results=${results}"><i class="material-icons">chevron_right</i></a>`
+        );
+      $(".pagination").append(chevronRight);
+    }
   }
 
   renderPagination();
