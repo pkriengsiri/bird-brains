@@ -60,7 +60,7 @@ router.get("/sightings/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return trains
+      //TODO: render 404 page if we're unable to return sightings
       res.status(500).end();
     });
 });
@@ -82,7 +82,7 @@ router.get("/sightings/:id/edit", (req, res) => {
         })
         .catch((err) => {
           console.log(err);
-          //TODO: render 404 page if we're unable to return trains
+          //TODO: render 404 page if we're unable to return sightings
           res.status(500).end();
         });
     });
@@ -98,7 +98,7 @@ router.post("/api/sightings", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return trains
+      //TODO: render 404 page if we're unable to return sightings
       res.status(500).end();
     });
 });
@@ -111,7 +111,7 @@ router.put("/api/sightings/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return trains
+      //TODO: render 404 page if we're unable to return sightings
       res.status(500).end();
     });
 });
@@ -148,7 +148,7 @@ router.delete("/api/sightings/:id", (req, res) => {
             })
             .catch((err) => {
               console.log(err);
-              //TODO: render 404 page if we're unable to return trains
+              //TODO: render 404 page if we're unable to return sightings
               res.status(500).end();
             });
         })
@@ -159,7 +159,7 @@ router.delete("/api/sightings/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return trains
+      //TODO: render 404 page if we're unable to return sightings
       res.status(500).end();
     });
 });
@@ -183,7 +183,7 @@ router.get("/sighting/new", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return trains
+      //TODO: render 404 page if we're unable to return sightings
       res.status(500).end();
     });
   //res.render("new-sighting");
@@ -199,7 +199,7 @@ router.get("/sighting/new", (req, res) => {
       })
       .catch((err) => {
         console.log(err);
-        //TODO: render 404 page if we're unable to return trains
+        //TODO: render 404 page if we're unable to return sightings
         res.status(500).end();
       });
   });
