@@ -51,7 +51,7 @@ td {
 }
 
 /* thumbnail in table  */
-#bird-img {
+.bird-img {
   height: 50px;
   padding: 0px 20px 0px 20px;
 }
@@ -173,7 +173,7 @@ td {
 
 
 /* thumbnail in table  */
-#bird-img {
+.bird-img {
   height: 50px;
   padding: 0px 20px 0px 20px;
 }
