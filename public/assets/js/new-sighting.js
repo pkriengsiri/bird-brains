@@ -1,6 +1,6 @@
 $(document).ready(() => {
   $("select").formSelect();
-  let imageURL = "";
+  let imageURL = "" || "/assets/imgs/no-image.jpg";
   // var instance = M.FormSelect.getInstance(elem);
 
   var myWidget = cloudinary.createUploadWidget(
@@ -41,6 +41,13 @@ $(document).ready(() => {
       UserId: UserId,
     };
 
+    // check for blank fields
+    if (UserId === "" || BirdId === "" || location === "" || comments === "") {
+      $(".warning-fields").removeClass("hide");
+      return;
+    }
+
+    // make post request
     $.post("/api/sightings", data)
       .then((response) => {
         console.log(response);
