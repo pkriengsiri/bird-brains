@@ -42,6 +42,14 @@ $(document).ready(() => {
       UserId: UserId,
     };
 
+    console.log(data);
+
+    // check for blank fields
+    if (UserId === "" || BirdId === "" || location === "" || comments === "") {
+      $(".warning-fields").removeClass("hide");
+      return;
+    }
+
     $.ajax({
       method: "PUT",
       url: `/api/sightings/${id}`,

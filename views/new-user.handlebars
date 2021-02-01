@@ -8,30 +8,36 @@
       <div class="row">
         <div class="input-field">
           <i class="material-icons prefix">group</i>
-          <textarea id="first_name" class="materialize-textarea"></textarea>
+          <textarea id="first_name" class="materialize-textarea" maxlength="50"></textarea>
           <label for="first_name">First Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field">
           <i class="material-icons prefix">group</i>
-          <textarea id="last_name" class="materialize-textarea"></textarea>
+          <textarea id="last_name" class="materialize-textarea" maxlength="50"></textarea>
           <label for="last_name">Last Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field">
           <i class="material-icons prefix">videogame_asset</i>
-          <textarea id="user_name" class="materialize-textarea"></textarea>
+          <textarea id="user_name" class="materialize-textarea" maxlength="50"></textarea>
           <label for="user_name">Username (Publicly displayed)</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field">
           <i class="material-icons prefix">email</i>
-          <textarea id="email" class="materialize-textarea"></textarea>
+          <textarea id="email" class="materialize-textarea" maxlength="100"></textarea>
           <label for="email">E-mail address</label>
         </div>
+      </div>
+      <div class="warning-fields hide center-align">
+        <p>You must fill out all form fields before submitting!</p>
+      </div>
+      <div class="warning-email hide center-align">
+        <p>Please enter a valid email before submitting!</p>
       </div>
       <div class="row center-align">
         <button id="sign-up" class="btn">Sign Up!</button>
