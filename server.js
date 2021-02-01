@@ -17,7 +17,6 @@ const db = require("./models");
 
 // require controllers
 const UserController = require("./controllers/userController");
-// const TrainsController = require("./controllers/trainsController");
 const BirdsController = require("./controllers/birdsController");
 const SightingsController = require("./controllers/sightingsController");
 
@@ -68,7 +67,7 @@ app.set("view engine", "handlebars");
 //     })
 //     .catch((err) => {
 //       console.log(err);
-//       //TODO: render 404 page if we're unable to return trains
+//       //TODO: render 404 page if we're unable to return sighting
 //       res.status(500).end();
 //     });
 // });
@@ -81,7 +80,6 @@ app.get("/api/config", (req, res) => {
 
 // use routes on controllers
 app.use(UserController);
-// app.use(TrainsController);
 app.use(BirdsController);
 app.use(SightingsController);
 

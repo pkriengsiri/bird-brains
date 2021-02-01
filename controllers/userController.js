@@ -81,7 +81,7 @@ router.get("/users/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return trains
+      //TODO: render 404 page if we're unable to return user
       res.status(500).end();
     });
 });
