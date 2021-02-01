@@ -1,8 +1,9 @@
 $(document).ready(() => {
   //get query parameters from the url
   const urlParams = new URLSearchParams(window.location.search);
-  const page = parseInt(urlParams.get("page"));
-  const results = parseInt(urlParams.get("results"));
+  const page = parseInt(urlParams.get("page")) || 1;
+  console.log(page);
+  const results = parseInt(urlParams.get("results")) || 10;
 
   // get the number of elements in the table
   const elements = $(".query-data").data("elements");
@@ -11,6 +12,9 @@ $(document).ready(() => {
   function renderPagination() {
     // render the pagination if the results > 0
     if (results > 0) {
+      // unhide the div
+      $(".pagination").removeClass("hide");
+
       // render the <
       if (page === 1) {
         const chevronLeft = $("<li>")
