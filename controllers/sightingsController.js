@@ -118,9 +118,44 @@ router.put("/api/sightings/:id", (req, res) => {
 
 // delete from db
 router.delete("/api/sightings/:id", (req, res) => {
-  db.Sighting.destroy({ where: { id: req.params.id } })
-    .then((result) => {
-      res.json(result);
+  let newScore;
+  // first get the sighting with the user's score an bird points
+  db.Sighting.findOne({
+    where: { id: req.params.id },
+    include: ["User", "Bird"],
+  })
+    .then((singleSighting) => {
+      const userScore = singleSighting.dataValues.User.score;
+      const userId = singleSighting.dataValues.User.id;
+      const birdPoints = singleSighting.dataValues.Bird.points;
+      newScore = userScore - birdPoints;
+      console.log(newScore);
+      console.log(userId);
+      // update user score
+      db.User.update(
+        { score: newScore },
+        {
+          where: {
+            id: userId,
+          },
+        }
+      )
+        .then((user) => {
+          // delete sighting
+          db.Sighting.destroy({ where: { id: req.params.id } })
+            .then((result) => {
+              res.json(result);
+            })
+            .catch((err) => {
+              console.log(err);
+              //TODO: render 404 page if we're unable to return trains
+              res.status(500).end();
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).end();
+        });
     })
     .catch((err) => {
       console.log(err);
@@ -152,6 +187,22 @@ router.get("/sighting/new", (req, res) => {
       res.status(500).end();
     });
   //res.render("new-sighting");
+
+  // api single sighting
+  router.get("/api/sightings/:id", (req, res) => {
+    db.Sighting.findOne({
+      where: { id: req.params.id },
+      include: ["User", "Bird"],
+    })
+      .then((singleSighting) => {
+        res.json(singleSighting.dataValues);
+      })
+      .catch((err) => {
+        console.log(err);
+        //TODO: render 404 page if we're unable to return trains
+        res.status(500).end();
+      });
+  });
 });
 
 module.exports = router;
