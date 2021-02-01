@@ -2,8 +2,8 @@
 
 <div class="container center-align">
 
-  <h1 class="">{{user.user_name}}</h1>
-  <h5>Score: {{user.score}} points</h5>
+  <h2 class="" data-userId="{{user.id}}">{{user.user_name}}</h2>
+  <h5 id="user_score">Score: {{user.score}} points</h5>
 
   <div class="divider"></div>
   <div class="row">
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="row">
-    <a href="/sighting/new?user_id={{user.id}}"></a><button class="btn bird-btn">Add a Sighting!</button>
+    <a href="/sighting/new?user_id={{user.id}}"><button class="btn">Add a Sighting!</button></a>
   </div>
 
 </div>
