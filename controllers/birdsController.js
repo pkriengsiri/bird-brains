@@ -7,9 +7,14 @@ const router = express.Router();
  * Route to render all birds to a page.
  */
 router.get("/birds", (req, res) => {
+  // object to hold pagination values
   const pagination = {};
+
+  // get query parameters
   const limit = parseInt(req.query.results);
   const offset = (parseInt(req.query.page) - 1) * limit;
+
+  // set pagination values or use defaults if not provided
   if (req.query.page) {
     pagination.limit = limit;
     pagination.offset = offset;
@@ -17,8 +22,12 @@ router.get("/birds", (req, res) => {
     pagination.limit = 10;
     pagination.offset = 0;
   }
+
+  // query to get number of all results
   db.Bird.findAll().then((response) => {
     const numberOfResults = { number: response.length };
+
+    //query to get paginated results
     db.Bird.findAll(pagination)
       .then((allBirds) => {
         res.render("all-birds", { birds: allBirds, results: numberOfResults });
