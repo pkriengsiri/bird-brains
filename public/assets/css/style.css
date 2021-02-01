@@ -83,6 +83,10 @@ td {
     padding-bottom: 0;
 }
 
+.sighting-form {
+  padding: 0px 30px 0px 30px;
+}
+
 .single-bird-img {
   height: 500px;
 }
