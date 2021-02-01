@@ -1,5 +1,6 @@
 body {
   background-color: #f4f1de;
+  font-family: 'Fraunces', serif;
 }
 
 nav {
@@ -57,6 +58,25 @@ td {
   color: black;
 }
 
+.bird-btn-secondary {
+  background-color: #273E47;
+  border:none;
+}
+
+.bird-btn-secondary:hover {
+  background-color: #365662;
+  border:none;
+}
+
+.bird-btn-secondary:focus {
+  background-color: #365662;
+  border:none;
+}
+
+.bird-tag {
+  color: black;
+}
+
 
 
 /* buttons formatting  */
@@ -105,7 +125,11 @@ td {
   padding-bottom: 0;
 }
 
-/* photo formatting  */
+.sighting-form {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
 .z-depth-3 {
   box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%),
     0 5px 5px -3px rgb(0 0 0 / 20%);
@@ -121,17 +145,22 @@ td {
   margin-right: 1rem;
 }
 
-#image-preview {
+/* thumbnail in table  */
+#bird-img {
+  height: 50px;
   padding: 0px 20px 0px 20px;
+}
+
+.image-preview {
+  padding: 20px 30px 0px 30px !important;
+  background-color: #fffef1;
+  box-shadow: 5px 5px 3px #888888;
 }
 
 #upload_widget {
   margin-left: 15px;
 }
 
-#uploaded-image {
-  margin-left: 15px;
-}
 
 /* page text formatting  */
 
