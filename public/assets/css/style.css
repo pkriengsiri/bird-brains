@@ -83,7 +83,11 @@ td {
     padding-bottom: 0;
 }
 
-.single-bird-img {
+.z-depth-3 {
+  box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%), 0 5px 5px -3px rgb(0 0 0 / 20%);
+}
+
+#single-bird-img {
   height: 500px;
 }
 
@@ -96,6 +100,7 @@ td {
 /* thumbnail in table  */
 #bird-img {
   height: 50px;
+  padding: 0px 20px 0px 20px;
 }
 
 #image-preview {
