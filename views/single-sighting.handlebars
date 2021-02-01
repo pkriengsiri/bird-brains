@@ -4,11 +4,12 @@
 <div class="container center-align">
 
 <h2 class="">{{Bird.common_name}}</h2>
-<h5>Location: {{location}} Sighting Date: {{createdAt}}</h5>
+<h5>Location: {{location}}
+<p>Sighting Date: {{createdAt}}</p></h5>
 <h5><a href="/users/{{User.id}}">User: {{User.user_name}}</a></h5>
-<p class="">User Score: {{User.score}} pts</p>
+<h5 class="">User Score: {{User.score}} pts</h5>
 
 <img alt="image of {{Bird.common_name}}" src="{{image_URL}}" class="z-depth-3" id="single-bird-img" />
-<h5 class="text-align: center">Comments: {{comments}}
+<h5 class="text-align: center contrast-color">Comments: {{comments}}
     <p>Points earned: {{Bird.points}}</p></h5>
 </div>

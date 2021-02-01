@@ -56,6 +56,11 @@ td {
   padding: 0px 20px 0px 20px;
 }
 
+.contrast-color {
+  color:#474973;
+  font-weight: bolder;
+}
+
 /* edit and delete buttons in table  */
 .fa-edit{
   color: black;
