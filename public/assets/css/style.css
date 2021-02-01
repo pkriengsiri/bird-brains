@@ -136,6 +136,12 @@ td {
   padding-right: 30px !important;
 }
 
+#create-account-text {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-left: 50px;
+}
+
 .z-depth-3 {
   box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%),
     0 5px 5px -3px rgb(0 0 0 / 20%);
