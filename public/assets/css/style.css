@@ -21,13 +21,13 @@ td {
 
 .birds-table {
   margin-top: 50px;
-  
   border-collapse: separate;
   border-spacing: 0 10px;
   
 }
 .table-head {
   background-color: #a4243b;
+  color: white;
   font-size: large;
 }
 
@@ -120,11 +120,7 @@ td {
   margin-right: 1rem;
 }
 
-/* #table-col {
 
-  margin-left: auto;
-  margin-right: auto;
-} */
 
 /* thumbnail in table  */
 #bird-img {
