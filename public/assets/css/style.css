@@ -16,6 +16,29 @@ button, input, optgroup, select, textarea {
   font-family: 'Fraunces', serif !important;
 }
 
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #000;
+  -webkit-box-shadow: 0 1px 0 0 #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #000;
+  -webkit-box-shadow: 0 1px 0 0 #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #000;
+}
+
+i.material-icons.prefix.active {
+  color: #000 !important;
+}
 
 /* tables formatting  */
 .table-head {
