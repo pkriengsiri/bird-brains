@@ -210,3 +210,29 @@ a:hover {
   background-color: #a4243B;
   color: white;
 } */
+
+/* ranks  */
+.rank{
+padding-left: 20px;
+}
+
+.trophy-1{
+  /* color: #d4af37; */
+  color: #efc501;
+  -webkit-text-stroke: 1px black;
+  padding-left: 5px;
+}
+.trophy-2{
+  color: #C0C0C0;
+  -webkit-text-stroke: 1px black;
+  padding-left: 5px;
+}
+.trophy-3{
+  color: #cd7f32;
+  -webkit-text-stroke: 1px black;
+  padding-left: 5px;
+ }
+ .high-score{
+   padding-right: 30px;
+ }
+ 

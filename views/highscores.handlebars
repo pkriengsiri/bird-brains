@@ -7,20 +7,33 @@
       <table class="birds-table striped">
         <thead class="table-head">
           <tr>
-            <th>Rank</th>
+            <th class="center">Rank</th>
             <th>User Name</th>
-            <th>Score</th>
+            <th class="center">Score</th>
 
           </tr>
         </thead>
 
         <tbody class="table-body">
+          {{#unless users}}
+          </table>
+          <p>Congratulations! You are the first user!</p>
+          <p>To get started, create a user name.</p>
+          <div class="col s12 l4 action-buttons">
+            <a href="/users/new"><button class="btn-large btn btn-highlight pulse"><i class="fas fa-users"></i> Create
+                an account</button></a>
+          </div>
+          {{/unless}}
           {{#each users}}
           <tr>
-            <td>{{@index}}</td>
-            <td><a href="/users/{{id}}" class="">{{user_name}}</td></a>
+            {{#if trophy}}
+            <td class="rank">{{rank}} <i class="fas fa-trophy trophy-{{rank}}"></i></td>
+            {{else}}
+            <td class="rank">{{rank}} </td>
+            {{/if}}
+            <td><a href="/users/{{id}}" class="left">{{user_name}}</td></a>
             {{!-- <td><button class="btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
-            <td>{{score}}</td>
+            <td class="right high-score">{{score}}</td>
           </tr>
 
           {{/each}}
@@ -31,4 +44,3 @@
     </div>
   </div>
 </div>
-
