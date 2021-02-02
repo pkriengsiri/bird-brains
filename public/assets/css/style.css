@@ -61,6 +61,17 @@ td {
   font-weight: bolder;
 }
 
+/* All users */
+.user-color {
+  color:#474973;
+  font-weight: bold;
+}
+
+.user-color:hover {
+  background-color: #a4243B;
+  color: white;  
+}
+
 /* edit and delete buttons in table  */
 .fa-edit{
   color: black;
@@ -146,7 +157,7 @@ td {
 }
 
 
-
+/* hyperlink formatting */
 
 .h-color {
   color:#a4243B;
