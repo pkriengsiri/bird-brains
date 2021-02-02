@@ -6,7 +6,7 @@
     {{!-- <i class="fas fa-kiwi-bird fa-3x"></i> --}}
   </div>
   <div class="row">
-    <h5><span><i class="fas fa-binoculars fa-lg"></i></span> Last 10 Sightings</h5>
+    <h5><span><i class="fas fa-binoculars fa-lg"></i></span> Recent Sightings</h5>
     <div class="col s12 center-align sightings-carousel">
       {{#each sightings}}
       <div class="row">
@@ -21,7 +21,7 @@
               <p>{{location}}</p>
             </div>
             <div class="card-action">
-              <a href="/sightings/{{id}}" id="h-color">View the sighting!</a>
+              <a href="/sightings/{{id}}" class="h-color">View the sighting!</a>
             </div>
           </div>
         </div>
@@ -33,10 +33,10 @@
         <a href="/sightings"><button class="btn-large btn"><i class="fas fa-kiwi-bird"></i>   View all sightings</button></a>
       </div>
       <div class="col s12 l4 action-buttons">
-        <a href="/sighting/new"><button class="btn-large btn action buttons"><i class="fas fa-camera"></i>    Add a sighting</button></a>
+        <a href="/users/new"><button class="btn-large btn btn-highlight pulse"><i class="fas fa-users"></i>    Create an account</button></a>
       </div>
       <div class="col s12 l4 action-buttons">
-        <a href="/users/new"><button class="btn-large btn action buttons"><i class="fas fa-users"></i>    Create an account</button></a>
+        <a href="/sighting/new"><button class="btn-large btn"><i class="fas fa-camera"></i>    Add a sighting</button></a>
       </div>
     </div>
 
