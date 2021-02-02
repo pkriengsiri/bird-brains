@@ -53,13 +53,13 @@ th {
   font-weight: bold;
 }
 
-.bird-tag {
+.h-color-black {
   color: black;
   font-weight: bold;
   font-size: medium;
 }
 
-.bird-tag:hover {
+.h-color-black:hover {
   background-color: #a4243B;
   color: white;
 }
