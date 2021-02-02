@@ -11,15 +11,14 @@
                     <img alt="image of {{Bird.common_name}}" src="{{image_URL}}" class="single-bird-img responsive-img">
 
                     <span class="card-title">
-                        <h5>Last sighting: {{location}}, {{createdAt}}</h5>
+                        <h5>Last sighting: <span style="color:black">{{location}} ({{createdAt}})</span></h5>
 
                     </span>
                 </div>
                 <span class="card-content center-align">
-                    <h5>Spotted by: <a href="/users/{{User.id}}">{{User.user_name}}</a></h5>
-                    <h5>Total Score: {{User.score}}</h5>
-                    <h5 class="contrast-color">Comments: {{comments}}</h5>
-                    <h5>Points earned: {{Bird.points}}</h5>
+                    <h5>Spotted by: <a href="/users/{{User.id}}" class="user-color">{{User.user_name}}</a>&nbsp;&nbsp;Score: <span style="color:black">{{User.score}}</span></h5>
+                    <h5>Comments: <span style="color:black">{{comments}}</span></h5>
+                    <h5>Bird Points: <span style="color:black">{{Bird.points}}</span></h5>
 
                 </span>
             </div>
@@ -27,12 +26,12 @@
         </div>
 
         <div class="row center-align">
-            <div class="col s12 l4 action-buttons">
+            <div class="col s12 l6 action-buttons">
                 <a href="/sightings"><button class="btn-large btn"><i class="fas fa-kiwi-bird"></i> View all
                         sightings</button></a>
             </div>
 
-            <div class="col s12 l4 action-buttons">
+            <div class="col s12 l6 action-buttons">
                 <a href="/sighting/new"><button class="btn-large btn"><i class="fas fa-camera"></i> Add a
                         sighting</button></a>
             </div>
