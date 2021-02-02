@@ -16,6 +16,20 @@ button, input, optgroup, select, textarea {
   font-family: 'Fraunces', serif !important;
 }
 
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #000;
+  -webkit-box-shadow: 0 1px 0 0 #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #000;
+}
+
 
 /* tables formatting  */
 .table-head {
@@ -105,6 +119,10 @@ th {
 .btn-highlight:focus {
   background-color: #365662 !important;
 }
+
+/* .btn-large, .btn {
+  height:auto !important;
+} */
 
 .bird-tag {
   color: black;
