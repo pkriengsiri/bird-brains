@@ -1,11 +1,16 @@
 // Creating and exporting the User model
 module.exports = function (sequelize, DataTypes) {
   const User = sequelize.define("User", {
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    user_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    score: DataTypes.INTEGER,
+    first_name: { type: DataTypes.STRING, allowNull: false, len: [1, 50] },
+    last_name: { type: DataTypes.STRING, allowNull: false, len: [1, 50] },
+    user_name: { type: DataTypes.STRING, allowNull: false, len: [1, 50] },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [1, 100],
+      isEmail: true,
+    },
+    score: { type: DataTypes.INTEGER, defaultValue: 0 },
   });
 
   // Associating User with Sightings
