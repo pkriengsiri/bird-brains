@@ -2,39 +2,41 @@
 
 <div class="container">
   <div class="divider"></div>
-  <div class="row center-align"><h2>Bird Sightings</h2></div>
+  <div class="row center-align">
+    <h2>Bird Sightings</h2>
+  </div>
   <div class="row">
     <table class="birds-table striped">
       <div class="col s8 offset-s2 center-align">
         <div class="row center-align">
 
-        <thead class="table-head">
-          <tr>
-            <th>Bird Name</th>
-            <th>Image</th>
-            <th>Location</th>
-            <th>Date Sighted</th>
-            {{!-- <th>Item Price</th> --}}
-          </tr>
-        </thead>
+          <thead class="table-head">
+            <tr>
+              <th>Bird Name</th>
+              <th>Image</th>
+              <th>Location</th>
+              <th>Date Sighted</th>
+              {{!-- <th>Item Price</th> --}}
+            </tr>
+          </thead>
 
-        <tbody class="table-body">
-          {{#each sightings}}
+          <tbody class="table-body">
+            {{#each sightings}}
 
 
-          <tr>
-            <td><a href="/sightings/{{id}}" class="bird-tag">{{Bird.common_name}}</a></td>
+            <tr>
+              {{!-- <td><a href="/birds/{{Bird.id}}" class="bird-tag">{{Bird.common_name}}</a></td> --}}
+              <td><a href="/sightings/{{id}}" class="bird-tag">{{Bird.common_name}}</a></td>
+              <td><a href="/sightings/{{id}}"><img src="{{image_URL}}" class="bird-img" /></a></td>
+              <td>{{location}}</td>
+              <td><a href="/sightings/{{id}}">{{createdAt}}</a></td>
+            </tr>
 
-            <td><img src="{{image_URL}}" class="bird-img" /></td> 
-            <td>{{location}}</td>
-            <td><a href="/sightings/{{id}}">{{createdAt}}</a></td>
-          </tr> 
+            {{/each}}
 
-          {{/each}}
-
-        </tbody>
-      </table>
-    </div>
+          </tbody>
+    </table>
   </div>
-  <div class="col s2"></div>
+</div>
+<div class="col s2"></div>
 </div>
