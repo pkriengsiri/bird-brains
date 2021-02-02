@@ -10,7 +10,8 @@
                 <div class="single-card-image">
                     <img alt="image of {{Bird.common_name}}" src="{{image_URL}}" class="single-bird-img responsive-img">
 
-                    <span class="card-title"><h5>Last sighting: {{location}}, {{createdAt}}</h5>
+                    <span class="card-title">
+                        <h5>Last sighting: {{location}}, {{createdAt}}</h5>
 
                     </span>
                 </div>
@@ -21,12 +22,26 @@
                     <h5>Points earned: {{Bird.points}}</h5>
 
                 </span>
-                <div class="card-action">
-                    <a href="/sightings/{{id}}" class="h-color">View the sighting!</a>
-                </div>
             </div>
+
         </div>
 
+        <div class="row center-align">
+            <div class="col s12 l4 action-buttons">
+                <a href="/sightings"><button class="btn-large btn"><i class="fas fa-kiwi-bird"></i> View all
+                        sightings</button></a>
+            </div>
+
+            <div class="col s12 l4 action-buttons">
+                <a href="/sighting/new"><button class="btn-large btn"><i class="fas fa-camera"></i> Add a
+                        sighting</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
 
 
 
@@ -42,14 +57,15 @@
 
 
 
-        {{!-- <h5>Location: {{location}}
-            <p>Sighting Date: {{createdAt}}</p>
-        </h5>
-        <h5><a href="/users/{{User.id}}">User: {{User.user_name}}</a></h5>
-        <h5 class="">User Score: {{User.score}} pts</h5>
 
-        <img alt="image of {{Bird.common_name}}" src="{{image_URL}}" class="single-bird-img" />
-        <h5 class="text-align: center contrast-color">Comments: {{comments}}
-            <p>Points earned: {{Bird.points}}</p>
-        </h5>
-    </div> --}}
+{{!-- <h5>Location: {{location}}
+    <p>Sighting Date: {{createdAt}}</p>
+</h5>
+<h5><a href="/users/{{User.id}}">User: {{User.user_name}}</a></h5>
+<h5 class="">User Score: {{User.score}} pts</h5>
+
+<img alt="image of {{Bird.common_name}}" src="{{image_URL}}" class="single-bird-img" />
+<h5 class="text-align: center contrast-color">Comments: {{comments}}
+    <p>Points earned: {{Bird.points}}</p>
+</h5>
+</div> --}}
