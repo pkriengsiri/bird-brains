@@ -29,10 +29,6 @@ tr {
 
 td {
   padding: 10px;
-
-}
-th {
-  border-radius: 0px;
 }
 
 .birds-table {
@@ -53,13 +49,13 @@ th {
   font-weight: bold;
 }
 
-.h-color-black {
+.bird-tag {
   color: black;
   font-weight: bold;
   font-size: medium;
 }
 
-.h-color-black:hover {
+.bird-tag:hover {
   background-color: #a4243B;
   color: white;
 }
