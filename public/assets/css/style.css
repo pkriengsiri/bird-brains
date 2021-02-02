@@ -145,10 +145,8 @@ td {
   margin-left: 50px;
 }
 
-.z-depth-3 {
-  box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%),
-    0 5px 5px -3px rgb(0 0 0 / 20%);
-}
+
+
 
 .h-color {
   color:#a4243B;
@@ -163,11 +161,34 @@ td {
   color: white;
 }
 
-#single-bird-img {
-  height: 500px;
+/* single sighting formatting */
+
+.single-card-img {
+  max-height: 500px;
+  width: auto;
 }
 
-#logo-img {
+.single-card-custom {
+  max-width: 800px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fffef1;
+  box-shadow: 10px 10px 8px #888888;
+  padding-bottom: 20px;
+}
+
+.single-card-content {
+  max-width: 800px;
+}
+.single-bird-img {
+  height: 500px;
+  /* box-shadow: 0 8px 17px 2px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%),
+    0 5px 5px -3px rgb(0 0 0 / 20%); */
+}
+
+.logo-img {
   height: 100%;
   margin-left: 1rem;
   margin-right: 1rem;
