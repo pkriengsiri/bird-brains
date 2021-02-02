@@ -7,6 +7,16 @@ nav {
   background-color: #a4243b;
 }
 
+/* over-ride materialize defaults */
+.dropdown-content li>span{
+  color: #000 !important;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: 'Fraunces', serif !important;
+}
+
+
 /* tables formatting  */
 .table-head {
   background-color: #a4243b;
