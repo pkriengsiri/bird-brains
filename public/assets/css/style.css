@@ -114,6 +114,7 @@ td {
   margin: 0px 10px 0px 10px;
   background: rgb(238, 238, 238);
   box-shadow: 10px 10px 8px #888888;
+  padding-bottom: 20px;
 }
 
 .card-content {
