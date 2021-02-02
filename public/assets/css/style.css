@@ -64,19 +64,16 @@ td {
   color: black;
 }
 
-.bird-btn-secondary {
-  background-color: #273E47;
-  border:none;
+.btn-highlight {
+  background-color: #273E47 !important;
 }
 
-.bird-btn-secondary:hover {
-  background-color: #365662;
-  border:none;
+.btn-highlight:hover {
+  background-color: #365662 !important;
 }
 
-.bird-btn-secondary:focus {
-  background-color: #365662;
-  border:none;
+.btn-highlight:focus {
+  background-color: #365662 !important;
 }
 
 .bird-tag {
