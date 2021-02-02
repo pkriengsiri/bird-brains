@@ -44,10 +44,21 @@ router.put("/api/users/:id", (req, res) => {
  * shows top 20
  */
 router.get("/highscores", (req, res) => {
-  db.User.findAll({ order: [["score", "DESC"]], limit: 20 })
+  db.User.findAll({ order: [["score", "DESC"]] })
+    // db.User.findAll({ order: [["score", "DESC"]], limit: 20 })
     .then((highscores) => {
-      // res.json({ users: highscores, rank: rank});
-      res.render("highscores", { users: highscores });
+      let rankedScores = highscores;
+      for (let i = 0; i < highscores.length; i++) {
+        let rank = i+1;
+        rankedScores[i]["rank"] = rank;
+        if (rank <4){
+          rankedScores[i]["trophy"] = rank;
+        } else {
+          rankedScores[i]["trophy"] = 0;
+        }
+        
+      }
+      res.render("highscores", { users: rankedScores });
     })
     .catch((err) => {
       console.log(err);
