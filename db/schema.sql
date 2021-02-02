@@ -45,8 +45,7 @@ INSERT INTO users (first_name, last_name, user_name, email, score)
 VALUES ("Sun", "Tzu", "warriorartist", "art@ofwaters.com", 5000);
 INSERT INTO users (first_name, last_name, user_name, email, score)
 VALUES ("Bruce", "Lee", "waaaaaah", "bruce@lee.com", 650000);
-INSERT INTO users (first_name, last_name, user_name, email, score)
-VALUES ("Chuck", "Norris", "memeking69420", "howdoesthiswork@chucknorris.com", 65000);
+
 
 -- Test the users table...
 
