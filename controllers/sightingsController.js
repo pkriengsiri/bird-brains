@@ -34,7 +34,7 @@ router.get("/sightings", (req, res) => {
       const formattedSightings = allSightings.map((sighting) => {
         const formattedSighting = { ...sighting.dataValues };
         formattedSighting.createdAt = moment(sighting.createdAt)
-          ? moment(sighting.createdAt).format("MMM D YYYY")
+          ? moment(sighting.createdAt).format("MMM D, YYYY")
           : "N/A";
         return formattedSighting;
       });
