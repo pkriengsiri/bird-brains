@@ -39,45 +39,6 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
-
-// app.get("/", (req, res) => {
-//     db.Sighting.findAll({
-//       // where: {},
-//   include: [{
-//       model: db.birds,
-//       where: {}
-//   }]
-//     }).then((allSightings, allBirds) => {
-//       res.render("index", {
-//         sightings: allSightings
-//         birds: allBirds
-//       })
-
-//           console.log(allSightings, allBirds);
-//     });
-
-// app.get("/", (req, res) => {
-//   db.Sighting.findAll({ order: [["id", "DESC"]], limit: 10 })
-//     .then((allSightings) => {
-//       // .then((allSightings) => {
-//       res.render("index", { sightings: allSightings });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       //TODO: render 404 page if we're unable to return sighting
-//       res.status(500).end();
-//     });
-// });
-
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
-});
-
 // use routes on controllers
 app.use(UserController);
 app.use(BirdsController);
@@ -87,8 +48,8 @@ app.use(SightingsController);
 
 app.get("*", (req, res) => {
   res.render("404-page");
-  });
-  
+});
+
 // connect to sql db and have server listen to port
 db.sequelize
   // .sync({ force: true })
@@ -101,5 +62,3 @@ db.sequelize
   .catch((err) => {
     console.log(err);
   });
-
-
