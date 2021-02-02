@@ -1,9 +1,9 @@
 // Creating and exporting the Sightings model
 module.exports = function (sequelize, DataTypes) {
   const Sighting = sequelize.define("Sighting", {
-    location: DataTypes.STRING,
-    comments: DataTypes.TEXT,
-    image_URL: DataTypes.STRING
+    location: { type: DataTypes.STRING, allowNull: false },
+    comments: { type: DataTypes.STRING, allowNull: false },
+    image_URL: { type: DataTypes.STRING, allowNull: true },
   });
 
   // Associating Sightings with the User and Bird models
