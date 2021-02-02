@@ -18,31 +18,43 @@
 
         <tbody class="table-body">
           {{#unless users}}
-          </table>
-          <p>Congratulations! You are the first user!</p>
-          <p>To get started, create a user name.</p>
-          <div class="col s12 l4 action-buttons">
-            <a href="/users/new"><button class="btn-large btn btn-highlight "><i class="fas fa-users"></i> Create
-                an account</button></a>
-          </div>
-          {{/unless}}
-          {{#each users}}
-          <tr>
-            {{#if trophy}}
-            <td class="rank">{{rank}} <i class="fas fa-trophy trophy-{{rank}}"></i></td>
-            {{else}}
-            <td class="rank">{{rank}} </td>
-            {{/if}}
-            <td><a href="/users/{{id}}" class="left">{{user_name}}</td></a>
-            {{!-- <td><button class="btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
-            <td class="right high-score">{{score}}</td>
-          </tr>
-
-          {{/each}}
-
-
         </tbody>
       </table>
+      <p>Congratulations! You are the first user!</p>
+      <p>To get started, create a user name.</p>
+
+      {{/unless}}
+      {{#each users}}
+      <tr>
+        {{#if trophy}}
+        <td class="rank">{{rank}} <i class="fas fa-trophy trophy-{{rank}}"></i></td>
+        {{else}}
+        <td class="rank">{{rank}} </td>
+        {{/if}}
+        <td><a href="/users/{{id}}" class="left">{{user_name}}</td></a>
+        {{!-- <td><button class="btn" data-id="{{this.id}}" />{{id}}. {{common_name}}</td> --}}
+        <td class="right high-score">{{score}}</td>
+      </tr>
+
+      {{/each}}
+
+
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row center-align">
+    <div class="col s12 l4 action-buttons">
+      <a href="/sightings"><button class="btn-large btn"><i class="fas fa-kiwi-bird"></i> View all
+          sightings</button></a>
+    </div>
+    <div class="col s12 l4 action-buttons">
+      <a href="/users/new"><button class="btn-large btn btn-highlight "><i class="fas fa-users"></i> Create an
+          account</button></a>
+    </div>
+    <div class="col s12 l4 action-buttons">
+      <a href="/sighting/new"><button class="btn-large btn"><i class="fas fa-camera"></i> Add a sighting</button></a>
     </div>
   </div>
 </div>
