@@ -65,6 +65,7 @@ router.get("/sightings/:id", (req, res) => {
     });
 });
 
+
 // view edit form
 router.get("/sightings/:id/edit", (req, res) => {
   db.User.findAll({ order: [["user_name", "ASC"]] }).then((allUsers) => {
