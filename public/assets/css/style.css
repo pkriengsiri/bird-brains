@@ -29,6 +29,10 @@ tr {
 
 td {
   padding: 10px;
+
+}
+th {
+  border-radius: 0px;
 }
 
 .birds-table {
