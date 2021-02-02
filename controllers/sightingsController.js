@@ -56,7 +56,12 @@ router.get("/sightings/:id", (req, res) => {
     include: ["User", "Bird"],
   })
     .then((singleSighting) => {
-      res.render("single-sighting", singleSighting.dataValues);
+      const formattedSighting = singleSighting.dataValues;
+      formattedSighting.createdAt = moment(formattedSighting.createdAt).format(
+        "MMM D, YYYY"
+      );
+
+      res.render("single-sighting", formattedSighting);
     })
     .catch((err) => {
       console.log(err);
@@ -64,7 +69,6 @@ router.get("/sightings/:id", (req, res) => {
       res.status(500).end();
     });
 });
-
 
 // view edit form
 router.get("/sightings/:id/edit", (req, res) => {
