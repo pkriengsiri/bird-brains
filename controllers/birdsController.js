@@ -34,7 +34,6 @@ router.get("/birds", (req, res) => {
       })
       .catch((err) => {
         console.log(err);
-        //TODO: render 404 page if we're unable to return birds
         res.status(500).end();
       });
   });
@@ -52,7 +51,6 @@ router.get("/birds/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return birds
       res.status(500).end();
     });
 });
