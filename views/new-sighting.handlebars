@@ -6,7 +6,7 @@
     <form class="col s12 m6 l8 sighting-form">
       <div class="row">
         <i class="material-icons prefix">add_a_photo</i>
-        <button id="upload_widget" class="btn bird-btn-secondary">Upload files</button>
+        <button id="upload_widget" class="btn">Upload files</button>
         <span class="hide" id="successMessage">Upload was sucessful!</span>
         <span class="hide" id="failMessage">Upload failed!</span>
       </div>
@@ -20,7 +20,7 @@
           <option value={{dataValues.id}} data-score={{dataValues.score}}>{{dataValues.user_name}}</option>
           {{/each}}
         </select>
-        <p id="create-account-text">Don't have an account?  <a href="/users/new">Click here to create one.</a></p>
+        <p id="create-account-text">Don't have an account? <a href="/users/new">Click here to create one.</a></p>
       </div>
       <div class="input-field row">
         <i class="material-icons prefix"><i class="fas fa-crow fa-sm"></i></i>
@@ -50,7 +50,7 @@
         <p>You must fill out all form fields before submitting!</p>
       </div>
       <div class="row">
-        <button class="btn" id="submit">Submit your sighting!</button>
+        <button class="btn btn-highlight pulse" id="submit">Submit your sighting!</button>
       </div>
     </form>
     <div class="col s12 m6 l4 image-preview">

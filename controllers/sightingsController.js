@@ -65,6 +65,7 @@ router.get("/sightings/:id", (req, res) => {
     });
 });
 
+
 // view edit form
 router.get("/sightings/:id/edit", (req, res) => {
   db.User.findAll({ order: [["user_name", "ASC"]] }).then((allUsers) => {
@@ -167,17 +168,20 @@ router.delete("/api/sightings/:id", (req, res) => {
 // view add form
 router.get("/sighting/new", (req, res) => {
   let query = {};
+  let specificUser = false;
   if (req.query.user_id) {
     query.id = req.query.user_id;
+    specificUser = true;
   }
   db.User.findAll({ where: query, order: [["user_name", "ASC"]] })
     .then((allUsers) => {
       db.Bird.findAll({ order: [["common_name", "ASC"]] }).then((allBirds) => {
         // res.json({ users: allUsers, birds: allBirds,query:query })
+
         res.render("new-sighting", {
           users: allUsers,
           birds: allBirds,
-          query: query,
+          query: specificUser,
         });
       });
     })

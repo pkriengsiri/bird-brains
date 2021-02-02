@@ -51,14 +51,15 @@ td {
 }
 
 /* thumbnail in table  */
-#bird-img {
+.bird-img {
   height: 50px;
   padding: 0px 20px 0px 20px;
 }
 
-.bird-img {
-  height: 50px;
-  padding: 0px 20px 0px 20px;
+
+.contrast-color {
+  color:#474973;
+  font-weight: bolder;
 }
 
 
@@ -70,19 +71,16 @@ td {
   color: black;
 }
 
-.bird-btn-secondary {
-  background-color: #273E47;
-  border:none;
+.btn-highlight {
+  background-color: #273E47 !important;
 }
 
-.bird-btn-secondary:hover {
-  background-color: #365662;
-  border:none;
+.btn-highlight:hover {
+  background-color: #365662 !important;
 }
 
-.bird-btn-secondary:focus {
-  background-color: #365662;
-  border:none;
+.btn-highlight:focus {
+  background-color: #365662 !important;
 }
 
 .bird-tag {
@@ -118,8 +116,9 @@ td {
   width: auto;
   height: auto;
   margin: 0px 10px 0px 10px;
-  background: rgb(238, 238, 238);
+  background: #fffef1;
   box-shadow: 10px 10px 8px #888888;
+  padding-bottom: 20px;
 }
 
 .card-content {
@@ -153,15 +152,15 @@ td {
     0 5px 5px -3px rgb(0 0 0 / 20%);
 }
 
-#h-color {
+.h-color {
   color:#a4243B;
 }
 
-#h-color:focus {
+.h-color:focus {
   outline:none;
 }
 
-#h-color:hover {
+.h-color:hover {
   background-color: #a4243B;
   color: white;
 }
@@ -179,7 +178,7 @@ td {
 
 
 /* thumbnail in table  */
-#bird-img {
+.bird-img {
   height: 50px;
   padding: 0px 20px 0px 20px;
 }
@@ -197,7 +196,7 @@ td {
 
 /* page text formatting  */
 
-h1 {
+h1, h2, h3, h4, h5 {
   color: #a4243b;
 }
 
@@ -206,10 +205,10 @@ h5 {
   margin-bottom: 2rem;
 }
 
-a{
+/* a{
   color:black
 }
 a:hover {
   background-color: #a4243B;
   color: white;
-}
+} */
