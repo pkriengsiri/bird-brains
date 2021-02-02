@@ -7,8 +7,8 @@ $(document).ready(() => {
   console.log(newScore);
 
   $(".delete-sighting").on("click", function (event) {
-    event.preventDefault()
-    console.log(this)
+    event.preventDefault();
+    console.log(this);
     var id = $(this).data("id");
 
     // Send the DELETE request.
@@ -24,7 +24,5 @@ $(document).ready(() => {
       .catch((error) => {
         console.log(error);
       });
-
-
   });
 });
