@@ -37,6 +37,8 @@ Modify the `/config/connection.js` file to connect to your MySQL server. Create 
 
 ![screenshot of Bird Brains homepage](./public/assets/imgs/screenshot.png)
 
+![demo gif of Bird Brains app](./public/assets/imgs/bird_brains.gif)
+
 ---
 
 ## License
