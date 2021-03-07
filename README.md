@@ -1,7 +1,7 @@
 # Bird Brains
 
 ## Description
-🔍 Bird Brains is an application for disrupting the bird watching industry. This application allows users to log bird sightings, receive a score based on their sighting, view other sightings, view high scores, and more!  This is a full-stack node express application with server-side rendering generated via handlebars.  Our application follows the model-view-controller design pattern.
+Bird Brains is an application for disrupting the bird watching industry. This application allows users to log bird sightings, receive a score based on their sighting, view other sightings, view high scores, and more!  This is a full-stack node express application with server-side rendering generated via handlebars.  Our application follows the model-view-controller design pattern.
 
 
 ### Technologies
@@ -11,7 +11,6 @@
 * Database: MySQL,  JawsDB
 * DevOps: Heroku
 
----
 
 ## Table of Contents
 - [Description](#Description)
@@ -23,23 +22,20 @@
 - [Questions](#Questions)
 - [Credits](#Credits)
 
----
 
 ## Installation
-💾 From GitHub, fork the repo and upload all contents to the deployed server. The server must have Node.js installed. Once forked, run `npm i` from the root directory to install required dependencies.
+From GitHub, fork the repo and upload all contents to the deployed server. The server must have Node.js installed. Once forked, run `npm i` from the root directory to install required dependencies.
 
 Modify the `/config/connection.js` file to connect to your MySQL server. Create the database `bird_brains` in your MySQL server, and insert seed data located in the `db` repo.
 
----
 
 ## Usage
-💻 Visit our [Heroku site](https://bird-brains.herokuapp.com/) and start logging bird sightings!
+Visit our [Heroku site](https://bird-brains.herokuapp.com/) and start logging bird sightings!
 
 ![screenshot of Bird Brains homepage](./public/assets/imgs/screenshot.png)
 
 ![demo gif of Bird Brains app](./public/assets/imgs/bird_brains.gif)
 
----
 
 ## License
 This application is covered under MIT License
@@ -74,14 +70,13 @@ SOFTWARE.
 ```
 </details>
 
----
+
 
 ## Contributing
 Please contact the authors of this application to request access to the repository as a contributor/
 
-👪 [Adrian Ash](https://github.com/ashadria1), [Jacquie Gutierrez](https://github.com/Jacquie24), [Pete Kriengsiri](https://github.com/pkriengsiri), and [Tony Schwebach](https://github.com/tonyschwebach)
+[Adrian Ash](https://github.com/ashadria1), [Jacquie Gutierrez](https://github.com/Jacquie24), [Pete Kriengsiri](https://github.com/pkriengsiri), and [Tony Schwebach](https://github.com/tonyschwebach)
 
----
 
 ## Badges
 [![GitHub issues](https://img.shields.io/github/issues/pkriengsiri/bird-brains)](https://github.com/pkriengsiri/bird-brains/issues)
@@ -92,17 +87,13 @@ Please contact the authors of this application to request access to the reposito
 
 [![GitHub stars](https://img.shields.io/github/stars/pkriengsiri/bird-brains)](https://github.com/pkriengsiri/bird-brains/stargazers)
 
----
 
 ## Questions
-✋ Contact us on Github!
-
 Find us on [GitHub: Bird Brains](https://github.com/pkriengsiri/bird-brains) 
 
 ### Our Team
 👪 [Adrian Ash](https://github.com/ashadria1), [Jacquie Gutierrez](https://github.com/Jacquie24), [Pete Kriengsiri](https://github.com/pkriengsiri), and [Tony Schwebach](https://github.com/tonyschwebach)
 
----
 
 ## References
 * [Kaggle.com](https://www.kaggle.com/veeralakrishna/200-bird-species-with-11788-images) - public dataset

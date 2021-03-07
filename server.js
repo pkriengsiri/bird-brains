@@ -6,6 +6,7 @@ const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
 const app = express();
+const compression = require('compression');
 
 // handlebars helper for increment
 handlebars.registerHelper("inc", function (value) {
@@ -26,6 +27,7 @@ const PORT = process.env.PORT || 8080;
 // middle ware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 // Static directory
 app.use(express.static("public"));
